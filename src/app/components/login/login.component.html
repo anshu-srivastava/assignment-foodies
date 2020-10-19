@@ -1,0 +1,23 @@
+<div class="login-wrapper">
+  <div class="login">
+    <h2 class="login-header login-margin">Log in</h2>
+    <form [formGroup]="authForm" class="login-container" (ngSubmit)="signIn()">
+      <p class="login-margin" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input type="email" placeholder="Email" formControlName="email">
+        <!-- <lit-input  type="email" placeholder="Email" formControlName="email"></lit-input> -->
+      </p>
+      <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+      </div>
+      <p class="login-margin" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" placeholder="Password" formControlName="password">
+      </p>
+      <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
+        <div *ngIf="formControls.password.errors.required">Password is required</div>
+      </div>
+      <p class="login-margin">
+        <input type="submit" value="Log in">
+      </p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.header{
+    padding:0.6250em;
+    border: #1c5069;
+    background:#1c5069;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 90% 10%;
+
+    h1{
+      text-align: center;
+      margin: 0.6250em;
+    }
+    button{
+      background: transparent;
+      border-color: transparent;
+      cursor: pointer;
+      float: right;
+      img{
+        background-color: #1c5069;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }

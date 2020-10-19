@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "foodies"
+    }
+  },
+  "defaultProject": "foodies",
+  "cli": {
+    "analytics": false
+  }
 }

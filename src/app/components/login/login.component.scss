@@ -1,0 +1,86 @@
+
+.login-wrapper{
+  display: grid;
+  margin: auto;
+
+  .login {
+    width: 400px;
+    height: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+    background: #1c5069;
+
+    .login-margin{
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+
+    p {
+      padding: 12px;
+    }
+
+    .login-header {
+      padding: 40px 10px 30px;
+      font-size: 1.4em;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      .login-container {
+        background: #ebebeb;
+        padding: 12px;
+      }
+    }
+
+    input {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      border-width: 1px;
+      border-style: solid;
+      padding: 16px;
+      outline: 0;
+      font-family: inherit;
+      font-size: 0.95em;
+    }
+
+    input[type="email"],input[type="password"] {
+      background: #fff;
+      border-color: #bbb;
+      color: #555;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #888;
+    }
+
+    input[type="submit"] {
+      background: rgb(1, 29, 51);
+      border-color: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #3d6486;
+    }
+
+    input[type="submit"]:focus {
+      border-color: #05a;
+    }
+
+    .error-block{
+      font-weight:800;
+      border-color: rgb(216, 12, 12);
+      color: rgb(230, 14, 14);
+      margin: auto 12px;
+    }
+
+    .has-error input[type="email"],
+    .has-error input[type="password"] {
+        border-color: rgb(216, 12, 12);
+        color: rgb(230, 14, 14);
+    }
+  }
+}
