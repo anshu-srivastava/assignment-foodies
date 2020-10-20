@@ -1,13 +1,10 @@
 .header{
     padding: 0.6250em;
-    // border: #1c5069;
-    // background:#1c5069;
-    // color: #fff;
-    border:  var(--background-tertiary);
+    border: 1px solid #c1b9b9;
     background:  var(--background-tertiary);
     color: var(--foreground-quaternary);
     display: grid;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 85% 15%;
 
     h1{
       text-align: center;

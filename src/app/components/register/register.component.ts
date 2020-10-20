@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
+import { CustomBtnElement } from '../../lit-element/button-element';
+console.assert(CustomBtnElement !== undefined);
 
 @Component({
   templateUrl: 'register.component.html',

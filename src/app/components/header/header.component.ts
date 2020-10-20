@@ -9,13 +9,13 @@ import { ThemeService } from 'src/app/services/theme/theme.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  theme: string;
+  theme = 'SetTheme';
   constructor(
     private authService: AuthService,
     private router: Router,
     private themeService: ThemeService
   ) {
-    this.setTheme();
+    this.themeService.isDarkTheme();
   }
 
   ngOnInit(): void {
@@ -23,9 +23,9 @@ export class HeaderComponent implements OnInit {
 
   setTheme(): void {
     if (this.themeService.isDarkTheme()) {
-      this.theme = 'Dark Theme';
+      this.theme = 'light Theme';
     } else {
-      this.theme = 'light theme';
+      this.theme = 'Dark theme';
     }
   }
 

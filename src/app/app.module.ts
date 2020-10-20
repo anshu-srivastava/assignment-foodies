@@ -9,6 +9,12 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
+import { StoreModule } from '@ngrx/store';
+import { productReducer } from './components/dashboard/products/store/products.reducer';
+import { ProductEffect } from './components/dashboard/products/store/product.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/dashboard/products/card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +23,20 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     DashboardComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    CardComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    StoreModule.forRoot({
+      product: productReducer,
+    }),
+    EffectsModule.forRoot([ProductEffect]),
+  ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

@@ -1,10 +1,14 @@
 <div class="wrapper">
-  <div>
-    <app-header></app-header>
-  </div>
-  <div>
-    <p>dashboard works!</p>
-    <lit-button title="dashboardBtn"></lit-button>
+  <app-header></app-header>
+  <div class="wrapper-section">
+    <main>
+      <div class="container">
+        <ng-container class="item-container" *ngFor="let item of (products$ |async )">
+          <app-card [product]="item">
+          </app-card>
+        </ng-container>
+      </div>
+    </main>
   </div>
 </div>
 

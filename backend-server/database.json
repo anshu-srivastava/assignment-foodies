@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "heading": "Pasta",
+      "description": "Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking",
+      "imageUrl": "https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80",
+      "uploader-id": "1"
+    },
+    {
+      "id": "2",
+      "heading": "Burger",
+      "description": "A hamburger is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun.",
+      "imageUrl": "https://images.unsplash.com/photo-1547584370-2cc98b8b8dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
+      "uploader-id": "1"
+    },
+    {
+      "id": "4",
+      "heading": "Pizza",
+      "description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients which is then baked at a high temperature, traditionally in a wood-fired oven.",
+      "imageUrl": "https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      "uploader-id": "1"
+    },
+    {
+      "heading": "Chicken Popcorn",
+      "description": "Popcorn chicken is a dish consisting of small, bite-sized pieces of chicken that have been breaded and fried. ",
+      "imageUrl": "https://images.unsplash.com/photo-1562967914-01efa7e87832?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80",
+      "id": "33",
+      "uploaderId": "2"
+    }
+  ]
+}
