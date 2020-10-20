@@ -1,0 +1,104 @@
+
+.register-wrapper{
+  display: grid;
+  margin: auto;
+
+  .register {
+    width: 400px;
+    height: 450px;
+    margin: 1em auto;
+    padding: 1em 1.5em;
+    font-size: 1.40rem;
+    background: #4f7588;
+
+    .top-space{
+      margin: 15px 0px;
+    }
+
+    .submit-btn{
+      margin: 3em auto;
+    }
+
+    .header {
+      padding: 10px 10px;
+      font-size: 1.4em;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      .container {
+        background: #ebebeb;
+        padding: 12px;
+      }
+    }
+
+    .btn-box{
+      display:inline-grid;
+      grid-template-columns: auto auto auto;
+      float: right;
+      a{
+        text-decoration: none;
+        color:#fff;
+      }
+      .btn{
+        padding: 8px 15px;
+        margin: 0px 5px;
+        color:#fff;
+        border: none;
+        background-color: #1c5069;
+      }
+    }
+
+    input {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      border-width: 1px;
+      border-style: solid;
+      padding: 10px;
+      outline: 0;
+      font-family: inherit;
+      font-size: 0.95em;
+    }
+
+    input[type="firstName"],
+    input[type="lastName"],
+    input[type="userName"],
+    input[type="password"] {
+      background: #fff;
+      border-color: #bbb;
+      color: #555;
+      &:focus{
+        border-color: #888;
+      }
+    }
+
+    input[type="submit"] {
+      background: rgb(1, 29, 51);
+      border-color: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #3d6486;
+    }
+
+    input[type="submit"]:focus {
+      border-color: #05a;
+    }
+
+    .error-block{
+      color: rgb(230, 14, 14);
+      margin: 5px 0px;
+    }
+
+    .has-error input[type="firstName"],
+    .has-error input[type="lastName"],
+    .has-error input[type="userName"]
+    .has-error input[type="password"] {
+        border:2px solid rgb(216, 12, 12);
+        color: rgb(230, 14, 14);
+    }
+  }
+}
