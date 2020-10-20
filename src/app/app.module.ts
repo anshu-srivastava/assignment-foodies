@@ -8,6 +8,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './components/header/header.component';
     AuthComponent,
     LoginComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,35 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  theme: string;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
+    this.setTheme();
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+  setTheme(): void {
+    if (this.themeService.isDarkTheme()) {
+      this.theme = 'Dark Theme';
+    } else {
+      this.theme = 'light theme';
+    }
+  }
+
+  changeTheme(): void {
+    if (this.themeService.isDarkTheme()) {
+      this.themeService.setLightTheme();
+    } else {
+      this.themeService.setDarkTheme();
+    }
+
+    this.setTheme();
+  }
 
   logout(): void {
     this.authService.logout();

@@ -1,23 +1,29 @@
 <div class="login-wrapper">
   <div class="login">
-    <h2 class="login-header login-margin">Log in</h2>
-    <form [formGroup]="authForm" class="login-container" (ngSubmit)="signIn()">
-      <p class="login-margin" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-        <input type="email" placeholder="Email" formControlName="email">
-        <!-- <lit-input  type="email" placeholder="Email" formControlName="email"></lit-input> -->
-      </p>
-      <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
-        <div *ngIf="formControls.email.errors.required">Email is required</div>
+    <h2 class="header login-margin">Log in</h2>
+    <form [formGroup]="authForm" class="container" (ngSubmit)="onSubmit()">
+      <div class="top-space">
+        <div [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+          <input type="email" placeholder="Email" formControlName="email">
+        </div>
+        <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
+          <div *ngIf="formControls.email.errors.required">Email is required</div>
+        </div>
       </div>
-      <p class="login-margin" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-        <input type="password" placeholder="Password" formControlName="password">
-      </p>
-      <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
-        <div *ngIf="formControls.password.errors.required">Password is required</div>
+      <div class="top-space">
+        <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+          <input type="password" placeholder="Password" formControlName="password">
+        </div>
+        <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
+          <div *ngIf="formControls.password.errors.required">Password is required</div>
+        </div>
       </div>
-      <p class="login-margin">
+      <div class="submit-btn">
         <input type="submit" value="Log in">
-      </p>
+      </div>
+      <div class="register-link">
+          <a routerLink="/register" class="btn btn-link">New user? Click here to Register</a>
+      </div>
     </form>
   </div>
 </div>

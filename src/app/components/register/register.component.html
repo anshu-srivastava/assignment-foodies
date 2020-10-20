@@ -1,0 +1,49 @@
+<div class="register-wrapper">
+  <div class="register">
+    <h2 class="header rgt-margin">Register</h2>
+    <div class="card-body">
+        <form [formGroup]="authForm" class="container" (ngSubmit)="onSubmit()">
+          <div class="top-space">
+            <div [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
+              <input type="text" placeholder="First Name" formControlName="firstName">
+            </div>
+            <div *ngIf="isSubmitted && formControls.firstName.errors" class="error-block">
+              <div *ngIf="formControls.firstName.errors.required">First Name is required</div>
+            </div>
+          </div>
+          <div class="top-space">
+            <div [ngClass]="{ 'has-error': isSubmitted && formControls.lastName.errors }">
+              <input type="text" placeholder="Last Name" formControlName="lastName">
+            </div>
+            <div *ngIf="isSubmitted && formControls.lastName.errors" class="error-block">
+              <div *ngIf="formControls.lastName.errors.required">Last Name is required</div>
+            </div>
+          </div>
+          <div class="form-group top-space">
+            <div [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+              <input type="text" placeholder="User Name" formControlName="username">
+            </div>
+            <div *ngIf="isSubmitted && formControls.username.errors" class="error-block">
+              <div *ngIf="formControls.username.errors.required">User Name is required</div>
+            </div>
+          </div>
+          <div class="top-space">
+            <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+              <input type="password" placeholder="Password" formControlName="password">
+            </div>
+            <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
+              <div *ngIf="formControls.password.errors.required">Password is required</div>
+            </div>
+          </div>
+            <div class="btn-box">
+                <button class="btn">
+                    Register
+                </button>
+                <div class="btn">
+                  <a routerLink="/login" class="btn-link">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>

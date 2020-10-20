@@ -17,6 +17,7 @@ export class CustomBtnElement extends LitElement {
         outline: none;
         border: none;
         cursor: pointer;
+        box-shadow: var(--background-tertiary-shadow);
       }
     `;
   }

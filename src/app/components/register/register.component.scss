@@ -1,18 +1,18 @@
 
-.login-wrapper{
+.register-wrapper{
   display: grid;
   margin: auto;
 
-  .login {
+  .register {
     width: 400px;
-    height: 400px;
+    height: 450px;
     margin: 1em auto;
-    padding: 2em 1.5em;
+    padding: 1em 1.5em;
     font-size: 1.40rem;
     background: #4f7588;
 
     .top-space{
-      margin: 25px 0px;
+      margin: 15px 0px;
     }
 
     .submit-btn{
@@ -20,7 +20,7 @@
     }
 
     .header {
-      padding: 15px 10px;
+      padding: 10px 10px;
       font-size: 1.4em;
       font-weight: normal;
       text-align: center;
@@ -31,10 +31,21 @@
         padding: 12px;
       }
     }
-    .register-link{
-      float:right;
+
+    .btn-box{
+      display:inline-grid;
+      grid-template-columns: auto auto auto;
+      float: right;
       a{
+        text-decoration: none;
         color:#fff;
+      }
+      .btn{
+        padding: 8px 15px;
+        margin: 0px 5px;
+        color:#fff;
+        border: none;
+        background-color: #1c5069;
       }
     }
 
@@ -50,7 +61,9 @@
       font-size: 0.95em;
     }
 
-    input[type="email"],
+    input[type="firstName"],
+    input[type="lastName"],
+    input[type="userName"],
     input[type="password"] {
       background: #fff;
       border-color: #bbb;
@@ -80,7 +93,9 @@
       margin: 5px 0px;
     }
 
-    .has-error input[type="email"],
+    .has-error input[type="firstName"],
+    .has-error input[type="lastName"],
+    .has-error input[type="userName"]
     .has-error input[type="password"] {
         border:2px solid rgb(216, 12, 12);
         color: rgb(230, 14, 14);

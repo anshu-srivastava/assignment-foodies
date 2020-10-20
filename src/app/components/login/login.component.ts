@@ -14,7 +14,11 @@ export class LoginComponent implements OnInit {
   authForm: FormGroup;
   isSubmitted  =  false;
 
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.authForm  =  this.formBuilder.group({
@@ -27,7 +31,7 @@ export class LoginComponent implements OnInit {
   get formControls() { return this.authForm.controls; }
 
   // tslint:disable-next-line: typedef
-  signIn(){
+  onSubmit(){
     this.isSubmitted = true;
     if (this.authForm.invalid){
       return;
