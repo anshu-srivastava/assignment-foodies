@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+
+html {
+    // basic color
+    --black: #000000;
+    --white: #ffffff;
+
+
+    --primary-color : #577BF9;
+    --primary-bg : #F6F6FA;
+    --text-color:#000000;
+
+    --bg-shadow : #0000004d;
+    --color-headings: #0077FF;
+    }
+
+    html[data-theme='dark'] {
+        --black: #ffffff;
+        --white: #000000;
+        --text-color:#ffffff;
+
+        --primary-color : #577BF9;
+        --primary-bg : #555555;
+
+        --bg-shadow : #0000004d;
+        --color-headings: #3694FF;
+    }
+
+    .modal-wrapper {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--bg-shadow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .modal-body {
+          width:350px;
+          background-color: var(--white);
+          border-radius: 4px;
+          padding: 2em;
+
+          .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 2em 0;
+            label{
+              color: var(--black);
+            }
+            input {
+              margin-top: 1em;
+              border: none;
+              outline: none;
+              border-bottom: 1px solid;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }

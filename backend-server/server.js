@@ -15,12 +15,12 @@ const SECRET_KEY = '123456789'
 
 const expiresIn = '1h'
 
-// Create a token from a payload 
+// Create a token from a payload
 function createToken(payload){
   return jwt.sign(payload, SECRET_KEY, {expiresIn})
 }
 
-// Verify the token 
+// Verify the token
 function verifyToken(token){
   return  jwt.verify(token, SECRET_KEY, (err, decode) => decode !== undefined ?  decode : err)
 }
@@ -43,7 +43,7 @@ server.post('/auth/register', (req, res) => {
     return
   }
 
-fs.readFile("./users.json", (err, data) => {  
+fs.readFile("./users.json", (err, data) => {
     if (err) {
       const status = 401
       const message = err
@@ -91,7 +91,7 @@ server.post('/auth/login', (req, res) => {
   res.status(200).json({access_token})
 })
 
-server.post('/products',  (req, res, next) => {
+/* server.post('/products',  (req, res, next) => {
   if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
     const status = 401
     const message = 'Error in authorization format'
@@ -114,7 +114,7 @@ server.post('/products',  (req, res, next) => {
     const message = 'Error access_token is revoked'
     res.status(status).json({status, message})
   }
-})
+}) */
 
 server.use(router)
 

@@ -8,7 +8,7 @@ import * as ProductActions from '../store/product.action';
 })
 export class CardComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<any>();
-  @Output() newItemIdEvent = new EventEmitter<any>();
+  @Output() newItemEventId = new EventEmitter<any>();
   @Input() product;
 
   constructor(private store: Store<any>) {
@@ -21,7 +21,7 @@ export class CardComponent implements OnInit {
     this.store.dispatch(new ProductActions.DeleteProduct(id));
   }
   edit(id): void {
-    this.newItemIdEvent.emit(id);
+    this.newItemEventId.emit(id);
   }
 
 

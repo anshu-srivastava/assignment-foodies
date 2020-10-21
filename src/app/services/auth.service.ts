@@ -6,7 +6,7 @@ import { User } from '../model/user.model';
 })
 export class AuthService {
   constructor() {}
-  public signIn(userData: User): void {
+  /* public signIn(userData: User): void {
     localStorage.setItem('ACCESS_TOKEN', 'access_token');
   }
   // tslint:disable-next-line: typedef
@@ -15,5 +15,5 @@ export class AuthService {
   }
   public logout(): void {
     localStorage.removeItem('ACCESS_TOKEN');
-  }
+  } */
 }

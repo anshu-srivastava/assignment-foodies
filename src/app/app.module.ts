@@ -15,6 +15,8 @@ import { ProductEffect } from './components/dashboard/products/store/product.eff
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/dashboard/products/card/card.component';
+import { AddProductComponent } from './components/dashboard/products/add-product/add-product.component';
+import { reducer } from './components/store/reducer';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { CardComponent } from './components/dashboard/products/card/card.compone
     HeaderComponent,
     RegisterComponent,
     CardComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { CardComponent } from './components/dashboard/products/card/card.compone
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot({
+      productView: reducer,
       product: productReducer,
     }),
     EffectsModule.forRoot([ProductEffect]),

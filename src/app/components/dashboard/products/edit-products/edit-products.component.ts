@@ -1,0 +1,49 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Store, select } from '@ngrx/store';
+import * as ProductActions from '../store/product.action';
+import * as fromProduct from '../store/products.reducer';
+import { Observable } from 'rxjs';
+import { CustomBtnElement } from '../../../../lit-element/button-element';
+
+console.assert(CustomBtnElement !== undefined);
+@Component({
+  selector: 'app-edit-products',
+  templateUrl: './edit-products.component.html',
+  styleUrls: ['./edit-products.component.scss'],
+})
+export class EditProductsComponent implements OnInit {
+  @Input() id;
+  constructor(private store: Store<any>) {}
+
+  editProductForm = new FormGroup({
+    heading: new FormControl(),
+    description: new FormControl(),
+    imageUrl: new FormControl(),
+    id: new FormControl(),
+  });
+
+  ngOnInit(): void {
+    this.getProductById(this.id);
+  }
+
+  getProductById(id): void {
+    this.store.dispatch(new ProductActions.LoadProduct(id));
+    const product$: Observable<any> = this.store.pipe(
+      select(fromProduct.getProductById)
+      );
+    product$.subscribe((formData) => {
+    if (formData) {
+        this.editProductForm.patchValue(formData);
+      }
+    });
+  }
+
+  editProduct(): void {
+    this.store.dispatch(new ProductActions.UpdateProduct(this.editProductForm.value));
+  }
+
+  Cancel(): void {
+    console.log('cancel');
+  }
+}

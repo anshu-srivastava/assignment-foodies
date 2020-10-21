@@ -1,11 +1,15 @@
-<div class="wrapper">
-  <app-header></app-header>
+<div class="wrapper"  (hideAddProductView)="hideAddProductPopUp($event)">
+  <app-header (addProductView)="addProductPopUp($event)"></app-header>
   <div class="wrapper-section">
     <main>
+      <app-add-product *ngIf="addProductFormView"></app-add-product>
       <div class="container">
         <ng-container class="item-container" *ngFor="let item of (products$ |async )">
-          <app-card [product]="item">
+          <app-card
+            [product]="item"
+            (newItemEventId)="editProduct($event)">
           </app-card>
+          <app-edit-products id={{item.id}}></app-edit-products>
         </ng-container>
       </div>
     </main>

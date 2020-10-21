@@ -2,6 +2,7 @@
   <div class="header">
     <h1>Welcome Foodies ...!</h1>
     <div>
+      <foodie-button title="Add Product" (click)="addProduct()"></foodie-button>
       <foodie-button [title]="theme" (click)='changeTheme()'></foodie-button>
       <button (click)="logout()" title= "logout">
         <img src='../../assets/images/logout.png'>
