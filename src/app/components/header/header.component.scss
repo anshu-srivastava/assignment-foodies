@@ -4,11 +4,11 @@
     background:  var(--background-tertiary);
     color: var(--foreground-quaternary);
     display: grid;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 80% 20%;
 
     h1{
       text-align: center;
-      margin: 0.6250em;
+      margin: 0.22em 0.625em;
     }
     button{
       background: transparent;

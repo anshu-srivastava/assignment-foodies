@@ -10,8 +10,8 @@ export class CustomBtnElement extends LitElement {
     return css`
       .lit-btn {
         background: var(--foreground-default);
-        color: var(--primary-light)
-        padding: 0.5em 1em;
+        color: var(--primary-light);
+        padding: 0.2em 0.5em;
         font-size: 1.25rem;
         border-radius: 4px;
         outline: none;

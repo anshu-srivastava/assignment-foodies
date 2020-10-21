@@ -2,29 +2,33 @@
 .card {
   width: 100%;
   background-color: var(--white);
-  border-radius: 15px;
 
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-  }
-
-  .info{
-    padding: 1em 1.5em 2em;
-    color: var(--text-color);
-    p{
-      margin-top: 1em;
+  .class-wrapper{
+    border:1px solid grey;
+    border-radius: 5px;
+    margin: 0px 10px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
     }
-  }
-  .btn-wrapper{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    padding: 0 0 2rem;
-    foodie-button{
-      margin: 0 2rem;
+
+    .info{
+      padding: 1em 1.5em 2em;
+      color: var(--text-color);
+      p{
+        margin-top: 1em;
+      }
+    }
+    .btn-wrapper{
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      padding: 0 0 2rem;
+      foodie-button{
+        margin: 0 2rem;
+      }
     }
   }
 }

@@ -1,13 +1,15 @@
 <div class="card">
-  <img src="{{product.imageUrl}}" alt="card image" />
-  <div class="info">
-    <h3>{{ product.heading }}</h3>
-    <p>
-      {{ product.description }}
-    </p>
-  </div>
-  <div class="btn-wrapper">
-    <foodie-button  title="Edit" (click)="edit(product.id)"></foodie-button >
-    <foodie-button  title="Delete" (click)="deleteProduct(product.id)"></foodie-button>
+  <div class="class-wrapper">
+    <img src="{{product.imageUrl}}" alt="card image" />
+    <div class="info">
+      <h3>{{ product.heading }}</h3>
+      <p>
+        {{ product.description }}
+      </p>
+    </div>
+    <div class="btn-wrapper">
+      <foodie-button  title="Edit" (click)="edit(product.id)"></foodie-button >
+      <foodie-button  title="Delete" (click)="deleteProduct(product.id)"></foodie-button>
+    </div>
   </div>
 </div>
