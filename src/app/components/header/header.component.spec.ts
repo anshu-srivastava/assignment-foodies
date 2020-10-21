@@ -1,29 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-    .compileComponents();
-  }));
+      declarations: [HeaderComponent],
+      providers: [AuthService, ThemeService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  }));
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

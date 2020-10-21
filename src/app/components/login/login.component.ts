@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 import { HttpService } from 'src/app/services/http.service';
-import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -18,7 +17,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private httpService: HttpService,
     private formBuilder: FormBuilder
   ) {}
 
