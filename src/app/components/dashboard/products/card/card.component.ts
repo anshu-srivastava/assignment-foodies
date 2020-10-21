@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as ProductActions from '../store/product.action';
+import * as productEditActions from '../../../store/action';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -22,6 +23,7 @@ export class CardComponent implements OnInit {
   }
   edit(id): void {
     this.newItemEventId.emit(id);
+    this.store.dispatch(new productEditActions.ShowEditProductAction());
   }
 
 

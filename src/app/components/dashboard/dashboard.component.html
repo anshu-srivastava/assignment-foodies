@@ -3,6 +3,7 @@
   <div class="wrapper-section">
     <main>
       <app-add-product *ngIf="addProductFormView"></app-add-product>
+      <app-edit-product id={{id}} *ngIf="editProductFormView"></app-edit-product>
       <div class="container">
         <ng-container class="item-container" *ngFor="let item of (products$ |async )">
           <app-card

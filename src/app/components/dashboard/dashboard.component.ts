@@ -29,8 +29,6 @@ export class DashboardComponent implements OnInit {
     this.store.subscribe((state) => {
       this.addProductFormView = state.productView.addProductFormView;
       this.editProductFormView = state.productView.editProductFormView;
-      console.log(this.addProductFormView);
-      console.log(this.editProductFormView);
     });
   }
 

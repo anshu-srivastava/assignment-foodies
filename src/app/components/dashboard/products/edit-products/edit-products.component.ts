@@ -4,11 +4,12 @@ import { Store, select } from '@ngrx/store';
 import * as ProductActions from '../store/product.action';
 import * as fromProduct from '../store/products.reducer';
 import { Observable } from 'rxjs';
+import * as editProductActions from '../../../store/action';
 import { CustomBtnElement } from '../../../../lit-element/button-element';
 
 console.assert(CustomBtnElement !== undefined);
 @Component({
-  selector: 'app-edit-products',
+  selector: 'app-edit-product',
   templateUrl: './edit-products.component.html',
   styleUrls: ['./edit-products.component.scss'],
 })
@@ -41,9 +42,10 @@ export class EditProductsComponent implements OnInit {
 
   editProduct(): void {
     this.store.dispatch(new ProductActions.UpdateProduct(this.editProductForm.value));
+    this.store.dispatch(new editProductActions.HideEditProductAction());
   }
 
   Cancel(): void {
-    console.log('cancel');
+    this.store.dispatch(new editProductActions.HideEditProductAction());
   }
 }

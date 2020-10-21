@@ -27,6 +27,7 @@ export class AddProductComponent implements OnInit {
     this.store.dispatch(
       new ProductActions.CreateProduct(this.addProductForm.value)
     );
+    this.store.dispatch(new FoodieProductActions.HideAddProductAction());
   }
 
   Cancel(): void {

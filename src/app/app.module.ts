@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/dashboard/products/card/card.component';
 import { AddProductComponent } from './components/dashboard/products/add-product/add-product.component';
 import { reducer } from './components/store/reducer';
+import { EditProductsComponent } from './components/dashboard/products/edit-products/edit-products.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { reducer } from './components/store/reducer';
     RegisterComponent,
     CardComponent,
     AddProductComponent,
+    EditProductsComponent
   ],
   imports: [
     BrowserModule,

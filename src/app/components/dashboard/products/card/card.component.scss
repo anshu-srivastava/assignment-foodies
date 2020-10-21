@@ -3,7 +3,7 @@
   width: 100%;
   background-color: var(--white);
   border-radius: 15px;
-  
+
   img {
     width: 100%;
     height: 200px;
@@ -12,7 +12,7 @@
   }
 
   .info{
-    padding: 1em 1.5em 2em; 
+    padding: 1em 1.5em 2em;
     color: var(--text-color);
     p{
       margin-top: 1em;
@@ -21,8 +21,10 @@
   .btn-wrapper{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: flex-end;
     padding: 0 0 2rem;
-
+    foodie-button{
+      margin: 0 2rem;
+    }
   }
 }
