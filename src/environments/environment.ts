@@ -5,6 +5,7 @@ export const serverBaseUrl = 'http://localhost:8000';
 export const environment = {
   production: false,
   login: serverBaseUrl + '/auth/login',
+  register: serverBaseUrl + '/auth/register',
   getProducts: serverBaseUrl + '/products',
   addProducts: serverBaseUrl + '/products',
   deleteProducts: serverBaseUrl + '/products/{id}',

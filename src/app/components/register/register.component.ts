@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     this.authForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
     if (this.authForm.invalid) {
       return;
     }
-    this.authService.signIn(this.authForm.value);
-    this.router.navigateByUrl('/login');
+    this.authService.register(this.authForm.value);
+    this.router.navigateByUrl('/dashboard');
   }
 }

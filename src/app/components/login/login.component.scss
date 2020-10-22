@@ -9,10 +9,11 @@
     margin: 4em auto;
     padding: 2em 1.5em;
     font-size: 1.40rem;
+    border-radius: 4px;
     background: #4f7588;
 
     .top-space{
-      margin: 25px 0px;
+      margin: 15px 0px;
     }
 
     .submit-btn{
@@ -78,6 +79,7 @@
     .error-block{
       color: rgb(230, 14, 14);
       margin: 5px 0px;
+      font-size: 12px;
     }
 
     .has-error input[type="email"],
