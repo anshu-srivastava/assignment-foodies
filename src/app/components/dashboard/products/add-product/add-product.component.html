@@ -1,8 +1,8 @@
 <div class="modal-wrapper">
   <div class="modal-body">
-    <div class="heading">
+    <header class="heading">
       <h3>Add Product</h3>
-    </div>
+    </header>
     <form [formGroup]="addProductForm">
       <div class="input-wrapper">
         <label for="username">id</label>
@@ -34,8 +34,8 @@
       </div>
     </form>
     <div class="btn-wrapper">
-      <foodie-button title="Add Product" (click)="addProduct()"></foodie-button>
-      <foodie-button title="Cancel" (click)="Cancel()"></foodie-button>
+      <foodie-button title="Add Product" (click)="addProduct()" tabindex="0" aria-label="Add Product"></foodie-button>
+      <foodie-button title="Cancel" (click)="Cancel()" aria-label="Cancel"></foodie-button>
     </div>
   </div>
 </div>

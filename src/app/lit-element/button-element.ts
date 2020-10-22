@@ -14,7 +14,6 @@ export class CustomBtnElement extends LitElement {
         padding: 0.2em 0.5em;
         font-size: 1.25rem;
         border-radius: 4px;
-        outline: none;
         cursor: pointer;
         box-shadow: var(--background-tertiary-shadow);
       }

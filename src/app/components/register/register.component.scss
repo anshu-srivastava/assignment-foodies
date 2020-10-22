@@ -9,6 +9,7 @@
     margin: 1em auto;
     padding: 1em 1.5em;
     font-size: 1.40rem;
+    position: relative;
     background: #4f7588;
 
     .top-space{
@@ -36,12 +37,19 @@
       display:inline-grid;
       grid-template-columns: auto auto auto;
       float: right;
+      position: absolute;
+      bottom: 35px;
+      right: 20px;
+      foodie-button{
+        border:none !important;
+      }
       a{
         text-decoration: none;
         color:#fff;
       }
       .btn{
-        padding: 8px 15px;
+        padding: 4px 12px;
+        font-size: 1.5rem;
         margin: 0px 5px;
         color:#fff;
         border: none;
@@ -90,7 +98,8 @@
 
     .error-block{
       color: rgb(230, 14, 14);
-      margin: 5px 0px;
+      font-size: 12px;
+      margin: 0px;
     }
 
     .has-error input[type="firstName"],

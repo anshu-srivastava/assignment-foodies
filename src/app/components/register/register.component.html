@@ -35,13 +35,12 @@
               <div *ngIf="formControls.password.errors.required">Password is required</div>
             </div>
           </div>
-            <div class="btn-box">
-                <foodie-button class="btn" title="Register">
-                </foodie-button>
-                <div class="btn">
-                  <a routerLink="/login" class="btn-link">Cancel</a>
-                </div>
+          <div class="btn-box">
+            <button class="btn" tabindex="0" aria-label="Register">Register</button>
+            <div class="btn">
+              <a routerLink="/login" class="btn-link" aria-label="Cancel" role="button">Cancel</a>
             </div>
+          </div>
         </form>
     </div>
   </div>
