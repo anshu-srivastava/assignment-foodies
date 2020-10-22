@@ -19,7 +19,7 @@ export class AddProductComponent implements OnInit {
     heading: new FormControl(),
     description: new FormControl(),
     imageUrl: new FormControl(),
-    id: new FormControl(),
+    // id: new FormControl(),
   });
 
   ngOnInit(): void {}

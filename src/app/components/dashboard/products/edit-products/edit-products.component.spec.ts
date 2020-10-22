@@ -15,7 +15,7 @@ describe('EditProductsComponent', () => {
     component = fixture.componentInstance;
   }));
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

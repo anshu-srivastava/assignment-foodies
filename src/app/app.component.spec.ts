@@ -20,7 +20,7 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'app-root'`, () => {
+  test(`should have as title 'app-root'`, () => {
     expect(component.title).toEqual('app-root');
   });
 });
