@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. Jest Implementation with test cases for few components.
 3. Application accessibility
 4. Theme [Light | Dark]
-5. lit-Element
+5. lit-Element [foodie-button]
 6. Json-server Implementation
 7. Login/ Registration UI
 8. CRUD operation
