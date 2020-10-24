@@ -39,6 +39,7 @@ html {
         z-index: 2;
         top: 0;
         left: 0;
+        right: 0;
         width: 100vw;
         height: 100vh;
         background-color: var(--bg-shadow);
@@ -67,5 +68,12 @@ html {
               font-size: 1.2rem;
             }
           }
+        }
+      }
+
+       // css for desktop view
+      @media (max-width: 600px) {
+        .modal-wrapper {
+          height: 125vh;
         }
       }

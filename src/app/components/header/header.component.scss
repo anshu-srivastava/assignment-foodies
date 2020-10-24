@@ -4,12 +4,11 @@
     background:  var(--background-tertiary);
     color: var(--foreground-quaternary);
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 75% 25%;
 
     h1{
       text-align: center;
-      margin: 0.22em 0.625em;
-      padding-left: 275px;
+      margin: 0 0.625em;
     }
     button{
       background: transparent;
@@ -21,6 +20,21 @@
         border-radius: 50%;
         width: 25px;
         height: 25px;
+      }
+    }
+    // css for desktop view
+    @media (min-width: 600px) {
+      h1{
+        padding-left: 275px;
+      }
+    }
+  }
+  // css for tab view
+  @media only screen and (min-width: 600px){
+    .header{
+      grid-template-columns: 65% 35%;
+      h1{
+        padding-left: 200px;
       }
     }
   }
