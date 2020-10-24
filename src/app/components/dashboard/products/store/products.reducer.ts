@@ -112,8 +112,8 @@ export function productReducer(
 			return {
 				...state,
 				loading: true,
-				selectedProduct: action.payload,
-			};
+        selectedProduct: action.payload,
+      };
 		}
 		case productActions.ProductActionTypes.UPDATE_PRODUCT_SUCCESS: {
 			let newProducts = [...state.products];

@@ -22,4 +22,23 @@ describe('DashboardComponent', () => {
   test('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  test('should be able to add product', () => {
+    const value = true;
+    component.addProductPopUp(value);
+  });
+
+  test('should be able to get product', () => {
+    component.getProducts();
+  });
+
+  test('should be able to get product', () => {
+    const value = true;
+    component.hideAddProductPopUp(value);
+  });
+
+  test('should be able to get product', () => {
+    const id = null;
+    component.editProduct(id);
+  });
 });

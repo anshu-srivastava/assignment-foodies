@@ -23,14 +23,14 @@ export class AddProductComponent implements OnInit {
   });
 
   ngOnInit(): void {}
-  addProduct(): void {
+  public addProduct(): void {
     this.store.dispatch(
       new ProductActions.CreateProduct(this.addProductForm.value)
     );
     this.store.dispatch(new FoodieProductActions.HideAddProductAction());
   }
 
-  Cancel(): void {
+  public Cancel(): void {
     this.store.dispatch(new FoodieProductActions.HideAddProductAction());
   }
 }

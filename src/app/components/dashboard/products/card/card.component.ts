@@ -25,7 +25,4 @@ export class CardComponent implements OnInit {
     this.newItemEventId.emit(id);
     this.store.dispatch(new productEditActions.ShowEditProductAction());
   }
-
-
-
 }
