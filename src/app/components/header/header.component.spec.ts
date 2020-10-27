@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/auth.service';
 import { ThemeService } from 'src/app/services/theme/theme.service';
 import { AppMocks } from 'src/app/mocks/mocks';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Store } from '@ngrx/store';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -16,13 +17,15 @@ describe('HeaderComponent', () => {
       imports: [RouterTestingModule],
       declarations: [HeaderComponent],
       providers: [
+        AuthService,
         {
           provide: ThemeService,
           useValue: AppMocks.getThemeServiceMock(),
         },
         {
-          provide: AuthService,
-        },
+          provide: Store,
+          useValue: AppMocks.getMockStoreService()
+        }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AuthService } from 'src/app/auth.service';
@@ -10,7 +10,7 @@ import * as ProductActions from '../store/action';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Output() addProductView = new EventEmitter<any>();
   theme = 'SetTheme';
   showAddProductView: boolean;
@@ -22,8 +22,6 @@ export class HeaderComponent implements OnInit {
   ) {
     this.themeService.isDarkTheme();
   }
-
-  ngOnInit(): void {}
 
   setTheme(): void {
     if (this.themeService.isDarkTheme()) {

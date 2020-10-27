@@ -21,7 +21,6 @@ export class LocalService {
       (err, t) => {
         // initialized and ready to go!
         // document.getElementById('output').innerHTML = i18next.t('key');
-        console.log(i18next);
       }
     );
   }

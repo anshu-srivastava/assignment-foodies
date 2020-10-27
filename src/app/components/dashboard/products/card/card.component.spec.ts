@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 import { AppMocks } from 'src/app/mocks/mocks';
@@ -11,29 +12,27 @@ describe('CardComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CardComponent],
       providers: [{ provide: Store, useValue: AppMocks.getMockStoreService() }],
-    }).compileComponents();
-  }));
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  }));
 
   test('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should be able to loggedIn', () => {
-    const cardSpy = spyOn(component['store'], 'dispatch');
+  test('should be able to delete product', () => {
+    const deleteProductSpy = spyOn(component['store'], 'dispatch');
     const id = null;
     component.deleteProduct(id);
-    expect(cardSpy).toHaveBeenCalled();
+    expect(deleteProductSpy).toHaveBeenCalled();
    });
   test('should be able to delete', () => {
-    const cardSpy = spyOn(component['store'], 'dispatch');
+    const editSpy = spyOn(component['store'], 'dispatch');
     const id = null;
     component.edit(id);
-    expect(cardSpy).toHaveBeenCalled();
+    expect(editSpy).toHaveBeenCalled();
   });
 });

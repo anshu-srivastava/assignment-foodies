@@ -1,3 +1,4 @@
+import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
 export class AppMocks {
@@ -8,12 +9,13 @@ export class AppMocks {
       setLightTheme: jest.fn(() => {}),
       setActiveTheme: jest.fn(() => {}),
     };
-  }
+  };
 
   public static getMockStoreService = () => {
     return {
       dispatch: (v) => jest.fn(() => {}),
       pipe: jest.fn(() => of({})),
+      subscribe: jest.fn(() => of({})),
     };
   };
 
@@ -33,6 +35,15 @@ export class AppMocks {
       getProducts: jest.fn(() => {}),
       editProduct: jest.fn(() => {}),
     };
+  };
+
+  public static getMockFormGroup = () => {
+    const myModel = {
+      valid: true,
+      value: null,
+    };
+    const fb = new FormBuilder();
+    return fb.group(myModel);
   };
 }
 

@@ -5,9 +5,7 @@ import * as ProductActions from '../store/product.action';
 import * as fromProduct from '../store/products.reducer';
 import { Observable } from 'rxjs';
 import * as editProductActions from '../../../store/action';
-import { CustomBtnElement } from '../../../../lit-element/button-element';
 
-console.assert(CustomBtnElement !== undefined);
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-products.component.html',
