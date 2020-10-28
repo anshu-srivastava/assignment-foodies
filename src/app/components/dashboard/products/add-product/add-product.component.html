@@ -1,19 +1,16 @@
 <div class="modal-wrapper">
   <div class="modal-body">
     <header class="heading">
-      <h3>Add Product</h3>
+      <h1>Add Product</h1>
     </header>
     <form [formGroup]="addProductForm">
-      <!-- <div class="input-wrapper">
-        <label for="username">id</label>
-        <input type="text" placeholder="Enter unique id" formControlName="id" />
-      </div> -->
       <div class="input-wrapper">
         <label for="heading">heading</label>
         <input
           type="text"
           placeholder="Enter Heading"
           formControlName="heading"
+          aria-label="Enter Heading"
         />
       </div>
       <div class="input-wrapper">
@@ -22,6 +19,7 @@
           type="text"
           placeholder="Enter description"
           formControlName="description"
+          aria-label="Enter description"
         />
       </div>
       <div class="input-wrapper">
@@ -30,6 +28,7 @@
           type="text"
           placeholder="Enter imageUrl"
           formControlName="imageUrl"
+          aria-label="Enter imageUrl"
         />
       </div>
     </form>

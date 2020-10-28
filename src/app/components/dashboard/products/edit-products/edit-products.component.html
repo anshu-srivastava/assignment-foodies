@@ -1,24 +1,24 @@
 <div class="modal-wrapper">
   <div class="modal-body">
     <header class="heading">
-        <h3>Edit Product</h3>
+        <h1>Edit Product</h1>
     </header>
     <form [formGroup]="editProductForm">
-      <div class="input-wrapper">
+      <!-- <div class="input-wrapper">
           <label for="id">id</label>
-          <input type="text" placeholder="Enter unique id" formControlName="id">
-      </div>
+          <input type="text" placeholder="Enter unique id" formControlName="id" aria-label="Edit Id">
+      </div> -->
       <div class="input-wrapper">
           <label for="heading">heading</label>
-          <input type="text" placeholder="Enter Heading" formControlName="heading">
+          <input type="text" placeholder="Enter Heading" formControlName="heading" aria-label="Edit heading">
       </div>
       <div class="input-wrapper">
           <label for="description">description</label>
-          <input type="text" placeholder="Enter description" formControlName="description">
+          <input type="text" placeholder="Enter description" formControlName="description" aria-label="Edit description">
       </div>
       <div class="input-wrapper">
           <label for="imageUrl">imageUrl</label>
-          <input type="text" placeholder="Enter imageUrl" formControlName="imageUrl">
+          <input type="text" placeholder="Enter imageUrl" formControlName="imageUrl" aria-label="Edit imageUrl">
       </div>
     </form>
     <div class="btn-wrapper">

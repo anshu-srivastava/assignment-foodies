@@ -1,11 +1,13 @@
 <div class="register-wrapper">
   <div class="register">
-    <h2 class="header rgt-margin">Register</h2>
-    <div class="card-body">
+    <header>
+      <h1 class="header rgt-margin">Register</h1>
+    </header>
+    <main class="card-body">
         <form [formGroup]="authForm" class="container" (ngSubmit)="onSubmit()">
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
-              <input type="text" placeholder="firstName" formControlName="firstName">
+              <input type="text" placeholder="firstName" formControlName="firstName" aria-label="Enter First Name">
             </div>
             <div *ngIf="isSubmitted && formControls.firstName.errors" class="error-block">
               <div *ngIf="formControls.firstName.errors.required">First Name is required</div>
@@ -13,7 +15,7 @@
           </div>
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.lastName.errors }">
-              <input type="text" placeholder="lastName" formControlName="lastName">
+              <input type="text" placeholder="lastName" formControlName="lastName" aria-label="Enter Last Name">
             </div>
             <div *ngIf="isSubmitted && formControls.lastName.errors" class="error-block">
               <div *ngIf="formControls.lastName.errors.required">Last Name is required</div>
@@ -21,7 +23,7 @@
           </div>
           <div class="form-group top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-              <input type="email" placeholder="email" formControlName="email">
+              <input type="email" placeholder="email" formControlName="email" aria-label="Enter Email">
             </div>
             <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
               <div *ngIf="formControls.email.errors.required">User Name is required</div>
@@ -29,7 +31,7 @@
           </div>
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-              <input type="password" placeholder="Password" formControlName="password">
+              <input type="password" placeholder="Password" formControlName="password" aria-label="Enter Password">
             </div>
             <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
               <div *ngIf="formControls.password.errors.required">Password is required</div>
@@ -42,6 +44,6 @@
             </div>
           </div>
         </form>
-    </div>
+      </main>
   </div>
 </div>

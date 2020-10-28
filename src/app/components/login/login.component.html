@@ -1,13 +1,13 @@
 <div class="login-wrapper">
   <div class="login">
     <header>
-      <h2 class="header login-margin">Log in</h2>
+      <h1 class="header login-margin">Log in</h1>
     </header>
     <main>
       <form [formGroup]="authForm" class="container" (ngSubmit)="onSubmit()">
         <div class="top-space">
           <div [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-            <input type="email" placeholder="Email" formControlName="email">
+            <input type="email" placeholder="Email" formControlName="email" aria-label="Enter Email">
           </div>
           <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
             <div *ngIf="formControls.email.errors.required">Email is required</div>
@@ -15,14 +15,14 @@
         </div>
         <div class="top-space">
           <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-            <input type="password" placeholder="Password" formControlName="password">
+            <input type="password" placeholder="Password" formControlName="password" aria-label="Enter Password">
           </div>
           <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
             <div *ngIf="formControls.password.errors.required">Password is required</div>
           </div>
         </div>
         <div class="submit-btn">
-          <input type="submit" value="Log in">
+          <input type="submit" value="Log in" aria-label="submit">
         </div>
         <div class="register-link">
             <a routerLink="/register" class="btn btn-link">New user? Click here to Register</a>
