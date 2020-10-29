@@ -3,8 +3,11 @@
   "emitDecoratorMetadata": true,
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "allowJs": true,
     "types": [
       "jest",
+      "jquery",
+      "jsdom",
       "node"
     ]
   },
