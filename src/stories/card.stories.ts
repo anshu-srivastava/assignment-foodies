@@ -5,6 +5,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { Store } from '@ngrx/store';
 import { CardComponent } from 'src/app/components/dashboard/products/card/card.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import * as StorybookMocks from '../app/mocks/mocks';
 
 export default {
   title: 'Example/card',
@@ -13,7 +14,7 @@ export default {
     moduleMetadata({
       declarations: [CardComponent],
       imports: [CommonModule],
-      providers: [Store],
+      providers: [{ provide: Store, useValue: StorybookMocks }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }),
   ],
@@ -35,8 +36,12 @@ card.args = {
   product: {
     id: '1',
     heading: 'Pasta',
-    description: 'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking',
-    imageUrl: 'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80'
+    description:
+      'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking',
+    imageUrl:
+      'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',
   },
+  editProduct: StorybookMocks.AppMocks.mockCardActions().updateProduct,
+  deleteProduct: StorybookMocks.AppMocks.mockCardActions().deleteProduct,
 };
 

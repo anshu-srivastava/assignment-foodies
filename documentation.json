@@ -782,10 +782,10 @@
     "classes": [
         {
             "name": "AppMocks",
-            "id": "class-AppMocks-fa92019b0b2188847566cb826ecbe811",
+            "id": "class-AppMocks-a0c5b37a2d7dc2e18a7f4f7d674d747c",
             "file": "src/app/mocks/mocks.ts",
             "type": "class",
-            "sourceCode": "import { FormBuilder } from '@angular/forms';\nimport { of } from 'rxjs';\n\nexport class AppMocks {\n  public static getThemeServiceMock = () => {\n    return {\n      isDarkTheme: jest.fn(() => false),\n      setDarkTheme: jest.fn(() => {}),\n      setLightTheme: jest.fn(() => {}),\n      setActiveTheme: jest.fn(() => {}),\n    };\n  };\n\n  public static getMockStoreService = () => {\n    return {\n      dispatch: (v) => jest.fn(() => {}),\n      pipe: jest.fn(() => of({})),\n      subscribe: jest.fn(() => of({})),\n    };\n  };\n\n  public static getMockAuthService = () => {\n    return {\n      signIn: jest.fn(() => {}),\n      register: jest.fn(() => {}),\n      isLoggedIn: jest.fn(() => {}),\n      logout: jest.fn(() => {}),\n    };\n  };\n\n  public static getMockProductService = () => {\n    return {\n      addProductPopUp: jest.fn(() => {}),\n      hideAddProductPopUp: jest.fn(() => {}),\n      getProducts: jest.fn(() => {}),\n      editProduct: jest.fn(() => {}),\n    };\n  };\n\n  public static getMockFormGroup = () => {\n    const myModel = {\n      valid: true,\n      value: null,\n    };\n    const fb = new FormBuilder();\n    return fb.group(myModel);\n  };\n}\n\n\n\n",
+            "sourceCode": "import { FormBuilder } from '@angular/forms';\nimport { of } from 'rxjs';\n\nexport class AppMocks {\n  public static getThemeServiceMock = () => {\n    return {\n      isDarkTheme: jest.fn(() => false),\n      setDarkTheme: jest.fn(() => {}),\n      setLightTheme: jest.fn(() => {}),\n      setActiveTheme: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockStoreService = () => {\n    return {\n      dispatch: (v) => jest.fn(() => {}),\n      pipe: jest.fn(() => of({})),\n      subscribe: jest.fn(() => of({})),\n    };\n  }\n\n  public static getMockAuthService = () => {\n    return {\n      signIn: jest.fn(() => {}),\n      register: jest.fn(() => {}),\n      isLoggedIn: jest.fn(() => {}),\n      logout: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockProductService = () => {\n    return {\n      addProductPopUp: jest.fn(() => {}),\n      hideAddProductPopUp: jest.fn(() => {}),\n      getProducts: jest.fn(() => {}),\n      editProduct: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockFormGroup = () => {\n    const myModel = {\n      valid: true,\n      value: null,\n    };\n    const fb = new FormBuilder();\n    return fb.group(myModel);\n  }\n\n  public static mockCardActions = () => {\n    return {\n      updateProduct: (event) => {event.stopPropagation(); console.log('updateProduct called'); },\n      deleteProduct: (event) => { event.stopPropagation(); console.log('deleteProduct called'); },\n      addProduct: (event) => {event.stopPropagation(); console.log('addProduct called'); }\n    };\n  }\n\n  public static mockProductActions = () => {\n    return {\n      cancel: () => {console.log('cancel called'); },\n      onSubmit: () => {console.log('onSubmit called'); }\n    };\n  }\n}\n\n\n\n",
             "properties": [
                 {
                     "name": "getMockAuthService",
@@ -838,6 +838,28 @@
                     "optional": false,
                     "description": "",
                     "line": 5,
+                    "modifierKind": [
+                        115
+                    ]
+                },
+                {
+                    "name": "mockCardActions",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 49,
+                    "modifierKind": [
+                        115
+                    ]
+                },
+                {
+                    "name": "mockProductActions",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57,
                     "modifierKind": [
                         115
                     ]
@@ -4355,7 +4377,7 @@
                 "linktype": "classe",
                 "name": "AppMocks",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { EditProductsComponent } from 'src/app/components/dashboard/products/edit-products/edit-products.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import * as StorybookMocks from '../app/mocks/mocks';
 
 export default {
   title: 'Example/edit-product',
@@ -13,7 +14,7 @@ export default {
     moduleMetadata({
       declarations: [EditProductsComponent],
       imports: [CommonModule, ReactiveFormsModule, FormsModule],
-      providers: [Store],
+      providers: [{ provide: Store, useValue: StorybookMocks }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }),
   ],
@@ -24,5 +25,8 @@ const Template: Story<EditProductsComponent> = (args: EditProductsComponent) => 
   props: args,
 });
 
-export const addProduct = Template.bind({});
-addProduct.args = {};
+export const editProduct = Template.bind({});
+editProduct.args = {
+  editProduct: StorybookMocks.AppMocks.mockCardActions().updateProduct,
+  cancel: StorybookMocks.AppMocks.mockProductActions().cancel,
+};

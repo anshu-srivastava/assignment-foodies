@@ -9,7 +9,7 @@ export class AppMocks {
       setLightTheme: jest.fn(() => {}),
       setActiveTheme: jest.fn(() => {}),
     };
-  };
+  }
 
   public static getMockStoreService = () => {
     return {
@@ -17,7 +17,7 @@ export class AppMocks {
       pipe: jest.fn(() => of({})),
       subscribe: jest.fn(() => of({})),
     };
-  };
+  }
 
   public static getMockAuthService = () => {
     return {
@@ -26,7 +26,7 @@ export class AppMocks {
       isLoggedIn: jest.fn(() => {}),
       logout: jest.fn(() => {}),
     };
-  };
+  }
 
   public static getMockProductService = () => {
     return {
@@ -35,7 +35,7 @@ export class AppMocks {
       getProducts: jest.fn(() => {}),
       editProduct: jest.fn(() => {}),
     };
-  };
+  }
 
   public static getMockFormGroup = () => {
     const myModel = {
@@ -44,7 +44,23 @@ export class AppMocks {
     };
     const fb = new FormBuilder();
     return fb.group(myModel);
-  };
+  }
+
+  public static mockCardActions = () => {
+    return {
+      updateProduct: (event) => {event.stopPropagation(); console.log('updateProduct called'); },
+      deleteProduct: (event) => { event.stopPropagation(); console.log('deleteProduct called'); },
+      addProduct: (event) => {event.stopPropagation(); console.log('addProduct called'); },
+      getProducts: (event) => {event.stopPropagation(); console.log('getProduct called'); }
+    };
+  }
+
+  public static mockProductActions = () => {
+    return {
+      cancel: () => {console.log('cancel called'); },
+      onSubmit: () => {console.log('onSubmit called'); }
+    };
+  }
 }
 
 
