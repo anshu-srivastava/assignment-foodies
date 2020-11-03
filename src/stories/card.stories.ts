@@ -5,7 +5,10 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { Store } from '@ngrx/store';
 import { CardComponent } from 'src/app/components/dashboard/products/card/card.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import * as StorybookMocks from '../app/mocks/appMocks';
+import * as StorybookMocks from '../app/appMocks/appMocks';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
 
 export default {
   title: 'Example/card',
@@ -13,7 +16,17 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [CardComponent],
-      imports: [CommonModule],
+      imports: [
+        CommonModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient],
+          },
+          defaultLanguage: 'en',
+        }),
+      ],
       providers: [{ provide: Store, useValue: StorybookMocks }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }),

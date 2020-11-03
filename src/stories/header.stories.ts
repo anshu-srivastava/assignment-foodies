@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
 
 export default {
   title: 'Example/header',
@@ -11,7 +14,17 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [CommonModule],
+      imports: [
+        CommonModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient],
+          },
+          defaultLanguage: 'en',
+        }),
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }),
   ],

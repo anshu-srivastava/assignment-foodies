@@ -13,7 +13,11 @@ export class AddProductComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<any>();
   @Input() mode;
   hidePopup: boolean;
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<any>) {
+    setTimeout(() => {
+      this.setFocus();
+    }, 500);
+  }
 
   addProductForm = new FormGroup({
     heading: new FormControl(),
@@ -32,5 +36,13 @@ export class AddProductComponent implements OnInit {
 
   public Cancel(): void {
     this.store.dispatch(new FoodieProductActions.HideAddProductAction());
+    window.scrollTo(0, 0);
+  }
+
+  setFocus(): void {
+    const test = document.getElementById('addProduct');
+    if (test) {
+      test.focus();
+    }
   }
 }

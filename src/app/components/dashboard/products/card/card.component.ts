@@ -7,12 +7,13 @@ import * as productEditActions from '../../../appStore/action';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
+export class CardComponent{
   @Output() newItemEvent = new EventEmitter<any>();
   @Output() newItemEventId = new EventEmitter<any>();
   @Input() product;
 
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<any>) {
+  }
 
   deleteProduct(id): void{
     this.store.dispatch(new ProductActions.DeleteProduct(id));

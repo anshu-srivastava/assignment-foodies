@@ -5,7 +5,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddProductComponent } from 'src/app/components/dashboard/products/add-product/add-product.component';
 import { Store } from '@ngrx/store';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import * as StorybookMocks from '../app/mocks/appMocks';
+import * as StorybookMocks from '../app/appMocks/appMocks';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
 
 export default {
   title: 'Example/add-product',
@@ -13,7 +16,19 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [AddProductComponent],
-      imports: [CommonModule, ReactiveFormsModule, FormsModule],
+      imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient],
+          },
+          defaultLanguage: 'en',
+        }),
+      ],
       providers: [{ provide: Store, useValue: StorybookMocks }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }),

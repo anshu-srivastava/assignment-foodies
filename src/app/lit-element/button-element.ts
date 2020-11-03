@@ -11,6 +11,7 @@ export class CustomBtnElement extends LitElement {
       .lit-btn {
         background: var(--foreground-default);
         color: var(--primary-light);
+        border: 2px solid #808080a3;
         padding: 0.2em 0.5em;
         font-size: 1.25rem;
         border-radius: 4px;

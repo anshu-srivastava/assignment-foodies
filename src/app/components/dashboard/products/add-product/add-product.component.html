@@ -1,4 +1,4 @@
-<div class="modal-wrapper">
+<div id="addProduct" class="modal-wrapper" tabindex="0">
   <div class="modal-body">
     <header class="heading">
       <h1>{{'product-operations.add-product-text' | translate}}</h1>
@@ -30,7 +30,7 @@
       </div>
     </form>
     <div class="btn-wrapper">
-      <foodie-button title="{{'product-operations.add-product-text' | translate}}" (click)="addProduct()" tabindex="0" aria-label="Add Product"></foodie-button>
+      <foodie-button title="{{'product-operations.add-product-text' | translate}}" (click)="addProduct()" aria-label="Add Product"></foodie-button>
       <foodie-button title="{{'product-operations.cancel-button' | translate}}" (click)="Cancel()" aria-label="Cancel"></foodie-button>
     </div>
   </div>

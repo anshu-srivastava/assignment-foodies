@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { DashboardComponent } from 'src/app/components/dashboard/dashboard.component';
 import { Store } from '@ngrx/store';
-import * as StorybookMocks from '../app/mocks/appMocks';
+import * as StorybookMocks from '../app/appMocks/appMocks';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 export default {
   title: 'Example/dashboard',
@@ -14,6 +15,7 @@ export default {
       declarations: [],
       providers: [{ provide: Store, useValue: StorybookMocks }],
       imports: [CommonModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }),
   ],
 } as Meta;

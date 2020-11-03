@@ -45,5 +45,6 @@ export class EditProductsComponent implements OnInit {
 
   Cancel(): void {
     this.store.dispatch(new editProductActions.HideEditProductAction());
+    window.scrollTo(0, 0);
   }
 }
