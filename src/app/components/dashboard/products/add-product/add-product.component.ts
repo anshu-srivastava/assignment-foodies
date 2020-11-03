@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as ProductActions from '../store/product.action';
-import * as FoodieProductActions from '../../../store/action';
+import * as ProductActions from '../productsStore/product.action';
+import * as FoodieProductActions from '../../../appStore/action';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',

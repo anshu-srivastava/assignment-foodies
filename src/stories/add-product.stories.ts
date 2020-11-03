@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddProductComponent } from 'src/app/components/dashboard/products/add-product/add-product.component';
 import { Store } from '@ngrx/store';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import * as StorybookMocks from '../app/mocks/mocks';
+import * as StorybookMocks from '../app/mocks/appMocks';
 
 export default {
   title: 'Example/add-product',

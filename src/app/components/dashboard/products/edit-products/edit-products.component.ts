@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import * as ProductActions from '../store/product.action';
-import * as fromProduct from '../store/products.reducer';
+import * as ProductActions from '../productsStore/product.action';
+import * as fromProduct from '../productsStore/products.reducer';
 import { Observable } from 'rxjs';
-import * as editProductActions from '../../../store/action';
+import * as editProductActions from '../../../appStore/action';
 
 @Component({
   selector: 'app-edit-product',

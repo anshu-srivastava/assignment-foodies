@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as ProductActions from '../store/product.action';
-import * as productEditActions from '../../../store/action';
+import * as ProductActions from '../productsStore/product.action';
+import * as productEditActions from '../../../appStore/action';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

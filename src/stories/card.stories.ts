@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { Store } from '@ngrx/store';
 import { CardComponent } from 'src/app/components/dashboard/products/card/card.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import * as StorybookMocks from '../app/mocks/mocks';
+import * as StorybookMocks from '../app/mocks/appMocks';
 
 export default {
   title: 'Example/card',

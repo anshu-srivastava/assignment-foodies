@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
-import { AppMocks } from 'src/app/mocks/mocks';
+import { AppMocks } from 'src/app/mocks/appMocks';
 import { AddProductComponent } from './add-product.component';
 
 describe('AddProductComponent', () => {

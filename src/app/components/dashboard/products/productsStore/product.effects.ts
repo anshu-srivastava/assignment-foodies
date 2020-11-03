@@ -9,7 +9,6 @@ import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
 import * as productActions from './product.action';
 import { Product } from './product.model';
 import {environment } from 'src/environments/environment';
-import * as showModalActions from '../../../dashboard/products/store/product.action';
 import { HttpService } from 'src/app/services/http.service';
 @Injectable()
 export class ProductEffect {
@@ -40,9 +39,9 @@ export class ProductEffect {
         productActions.ProductActionTypes.CREATE_PRODUCT
     ),
     mergeMap((action: productActions.CreateProduct) =>
-      this.httpService.postSecured(environment.addProducts,action.payload).pipe(
+      this.httpService.postSecured(environment.addProducts, action.payload).pipe(
         switchMap(
-          (newproduct: Product) =>[
+          (newproduct: Product) => [
             new productActions.CreateProductSuccess(newproduct)
         ]
         ),
@@ -74,9 +73,9 @@ export class ProductEffect {
         productActions.ProductActionTypes.UPDATE_PRODUCT
     ),
     mergeMap((action: productActions.UpdateProduct) =>
-      this.httpService.patchSecured(environment.getProductsById.replace('{id}', action.payload.id.toString()),action.payload).pipe(
+      this.httpService.patchSecured(environment.getProductsById.replace('{id}', action.payload.id.toString()), action.payload).pipe(
         switchMap(
-          (products: Product) =>[
+          (products: Product) => [
             new productActions.UpdateProductSuccess(products)
           ]
         ),

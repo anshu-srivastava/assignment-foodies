@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as ProductActions from '../dashboard/products/store/product.action';
-import * as fromProduct from '../dashboard/products/store/products.reducer';
-import { Product } from './products/store/product.model';
+import * as ProductActions from '../dashboard/products/productsStore/product.action';
+import * as fromProduct from '../dashboard/products/productsStore/products.reducer';
+import { Product } from './products/productsStore/product.model';
 
 
 @Component({

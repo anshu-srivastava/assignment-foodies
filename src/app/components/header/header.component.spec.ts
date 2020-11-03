@@ -4,7 +4,7 @@ import { HeaderComponent } from './header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
 import { ThemeService } from 'src/app/services/theme/theme.service';
-import { AppMocks } from 'src/app/mocks/mocks';
+import { AppMocks } from 'src/app/mocks/appMocks';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
 

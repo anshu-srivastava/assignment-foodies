@@ -1,46 +1,46 @@
 <div class="register-wrapper">
   <div class="register">
     <header>
-      <h1 class="header rgt-margin">Register</h1>
+      <h1 class="header rgt-margin">{{'auth.register-tab' | translate}}</h1>
     </header>
     <main class="card-body">
         <form [formGroup]="authForm" class="container" (ngSubmit)="onSubmit()">
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
-              <input type="text" placeholder="firstName" formControlName="firstName" aria-label="Enter First Name">
+              <input type="text" placeholder="{{'auth.first-name-text' | translate}}" formControlName="firstName" aria-label="Enter First Name">
             </div>
             <div *ngIf="isSubmitted && formControls.firstName.errors" class="error-block">
-              <div *ngIf="formControls.firstName.errors.required">First Name is required</div>
+              <div *ngIf="formControls.firstName.errors.required">{{'auth.first-name-validation' | translate}}</div>
             </div>
           </div>
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.lastName.errors }">
-              <input type="text" placeholder="lastName" formControlName="lastName" aria-label="Enter Last Name">
+              <input type="text" placeholder="{{'auth.last-name-text' | translate}}" formControlName="lastName" aria-label="Enter Last Name">
             </div>
             <div *ngIf="isSubmitted && formControls.lastName.errors" class="error-block">
-              <div *ngIf="formControls.lastName.errors.required">Last Name is required</div>
+              <div *ngIf="formControls.lastName.errors.required">{{'auth.last-name-validation' | translate}}</div>
             </div>
           </div>
           <div class="form-group top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-              <input type="email" placeholder="email" formControlName="email" aria-label="Enter Email">
+              <input type="email" placeholder="{{'auth.email-text' | translate}}" formControlName="email" aria-label="Enter Email">
             </div>
             <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
-              <div *ngIf="formControls.email.errors.required">User Name is required</div>
+              <div *ngIf="formControls.email.errors.required">{{'auth.email-validation' | translate}}</div>
             </div>
           </div>
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-              <input type="password" placeholder="Password" formControlName="password" aria-label="Enter Password">
+              <input type="password" placeholder="{{'auth.password-text' | translate}}" formControlName="password" aria-label="Enter Password">
             </div>
             <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
-              <div *ngIf="formControls.password.errors.required">Password is required</div>
+              <div *ngIf="formControls.password.errors.required">{{'auth.password-validation' | translate}}</div>
             </div>
           </div>
           <div class="btn-box">
-            <button class="btn" aria-label="Register" (click)="onSubmit()">Register</button>
+            <button class="btn" aria-label="Register" (click)="onSubmit()">{{'auth.register-tab' | translate}}</button>
             <div class="btn">
-              <a routerLink="/login" class="btn-link" aria-label="Cancel" role="button">Cancel</a>
+              <a routerLink="/login" class="btn-link" aria-label="Cancel" role="button">{{'product-operations.cancel-button' | translate}}</a>
             </div>
           </div>
         </form>

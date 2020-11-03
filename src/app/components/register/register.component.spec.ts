@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppMocks } from 'src/app/mocks/mocks';
+import { AppMocks } from 'src/app/mocks/appMocks';
 
 import { RegisterComponent } from './register.component';
 

@@ -1,40 +1,37 @@
 <div class="modal-wrapper">
   <div class="modal-body">
     <header class="heading">
-      <h1>Add Product</h1>
+      <h1>{{'product-operations.add-product-text' | translate}}</h1>
     </header>
     <form [formGroup]="addProductForm">
       <div class="input-wrapper">
-        <label for="heading">heading</label>
         <input
           type="text"
-          placeholder="Enter Heading"
+          placeholder="{{'product-operations.heading-text' | translate}}"
           formControlName="heading"
           aria-label="Enter Heading"
         />
       </div>
       <div class="input-wrapper">
-        <label for="description">description</label>
         <input
           type="text"
-          placeholder="Enter description"
+          placeholder="{{'product-operations.description-text' | translate}}"
           formControlName="description"
           aria-label="Enter description"
         />
       </div>
       <div class="input-wrapper">
-        <label for="imageUrl">imageUrl</label>
         <input
           type="text"
-          placeholder="Enter imageUrl"
+          placeholder="{{'product-operations.imageUrl-text' | translate}}"
           formControlName="imageUrl"
           aria-label="Enter imageUrl"
         />
       </div>
     </form>
     <div class="btn-wrapper">
-      <foodie-button title="Add Product" (click)="addProduct()" tabindex="0" aria-label="Add Product"></foodie-button>
-      <foodie-button title="Cancel" (click)="Cancel()" aria-label="Cancel"></foodie-button>
+      <foodie-button title="{{'product-operations.add-product-text' | translate}}" (click)="addProduct()" tabindex="0" aria-label="Add Product"></foodie-button>
+      <foodie-button title="{{'product-operations.cancel-button' | translate}}" (click)="Cancel()" aria-label="Cancel"></foodie-button>
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppMocks } from 'src/app/mocks/mocks';
+import { AppMocks } from 'src/app/mocks/appMocks';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

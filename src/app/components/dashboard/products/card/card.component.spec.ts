@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
-import { AppMocks } from 'src/app/mocks/mocks';
+import { AppMocks } from 'src/app/mocks/appMocks';
 import { CardComponent } from './card.component';
 
 describe('CardComponent', () => {

@@ -25,6 +25,8 @@
     "@angular/router": "~10.1.6",
     "@ngrx/effects": "^10.0.1",
     "@ngrx/store": "^10.0.1",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "@polymer/lit-element": "^0.7.1",
     "i18next": "^19.8.2",
     "lit-element": "^2.4.0",
@@ -57,27 +59,23 @@
   "jest": {
     "preset": "jest-preset-angular",
     "collectCoverage": true,
-    "setupFilesAfterEnv":
-      [
-        "<rootDir>/src/setupJest.ts"
-      ],
-    "testPathIgnorePatterns":
-      [
-        "<rootDir>/node_modules/",
-        "<rootDir>/dist/",
-        "<rootDir>/storybook-static/",
-        "<rootDir>/src/test.ts"
-      ],
-    "coveragePathIgnorePatterns":
-      [
-        "/jest-config/",
-        "/node_modules/"
-      ],
-    "snapshotSerializers":
-      [
-        "<rootDir>/node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
-        "<rootDir>/node_modules/jest-preset-angular/HTMLCommentSerializer.js"
-      ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/storybook-static/",
+      "<rootDir>/src/test.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/jest-config/",
+      "/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
+      "<rootDir>/node_modules/jest-preset-angular/HTMLCommentSerializer.js"
+    ],
     "globals": {
       "ts-jest": {
         "tsConfig": "<rootDir>/tsconfig.spec.json",

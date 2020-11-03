@@ -8,8 +8,8 @@
       </p>
     </div>
     <div class="btn-wrapper">
-      <foodie-button  title="Edit" (click)="edit(product.id)" aria-label="Edit"></foodie-button >
-      <foodie-button  title="Delete" (click)="deleteProduct(product.id)" aria-label="Delete"></foodie-button>
+      <foodie-button  title="{{'card.update-button' | translate}}" (click)="edit(product.id)" aria-label="Edit"></foodie-button >
+      <foodie-button  title="{{'card.delete-button' | translate}}" (click)="deleteProduct(product.id)" aria-label="Delete"></foodie-button>
     </div>
   </div>
 </div>

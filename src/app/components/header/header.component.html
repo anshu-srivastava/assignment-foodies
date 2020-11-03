@@ -1,9 +1,12 @@
 <header>
   <div class="header">
-    <h1>Welcome Foodies ...!</h1>
+    <div class="header-wrapper">
+      <foodie-button title="{{'header.change-language' | translate}}" (click)='changeLanguage()' aria-label="change Language"></foodie-button>
+      <h1>{{'header.heading' | translate}}</h1>
+    </div>
     <div>
-      <foodie-button title="Add Product" (click)="addProduct()" aria-label="Add Product"></foodie-button>
-      <foodie-button [title]="theme" (click)='changeTheme()' aria-label="Theme"></foodie-button>
+      <foodie-button title="{{'header.add-product-button' | translate}}" (click)="addProduct()" aria-label="Add Product"></foodie-button>
+      <foodie-button title="{{'header.change-theme-button' | translate}}" (click)='changeTheme()' aria-label="Theme"></foodie-button>
       <button (click)="logout()" title= "logout">
         <img src='../../assets/images/logout.png' alt="logout">
       </button>
