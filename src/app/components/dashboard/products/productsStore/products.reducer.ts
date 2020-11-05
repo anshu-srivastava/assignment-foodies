@@ -1,6 +1,5 @@
 import * as productActions from './product.action';
 import { Product } from './product.model';
-import * as fromRoot from './app-state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface ProductState {
@@ -12,7 +11,7 @@ export interface ProductState {
   selectedProduct: object;
 }
 
-export interface AppState extends fromRoot.AppState {
+export interface AppState {
   products: ProductState;
 }
 
@@ -20,7 +19,7 @@ export const initialState: ProductState = {
   products: [],
   loading: false,
   loaded: false,
-  error: ' ',
+  error: '',
   productId: null,
   selectedProduct: null,
 };
@@ -108,46 +107,46 @@ export function productReducer(
       };
     }
 
-		case productActions.ProductActionTypes.UPDATE_PRODUCT: {
-			return {
-				...state,
-				loading: true,
-				selectedProduct: action.payload,
-			};
-		}
-		case productActions.ProductActionTypes.UPDATE_PRODUCT_SUCCESS: {
-			let newProducts = [...state.products];
-			newProducts = newProducts.map((item) => {
-				if (action.payload.id === item.id) {
-					return action.payload;
-				}
-				return item;
-			});
-			return {
-				...state,
-				loading: false,
-				loaded: true,
-				products: newProducts,
-			};
-		}
+    case productActions.ProductActionTypes.UPDATE_PRODUCT: {
+      return {
+        ...state,
+        loading: true,
+        selectedProduct: action.payload,
+      };
+    }
+    case productActions.ProductActionTypes.UPDATE_PRODUCT_SUCCESS: {
+      let newProducts = [...state.products];
+      newProducts = newProducts.map((item) => {
+        if (action.payload.id === item.id) {
+          return action.payload;
+        }
+        return item;
+      });
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        products: newProducts,
+      };
+    }
 
-		case productActions.ProductActionTypes.UPDATE_PRODUCT_FAIL: {
-			return {
-				...state,
-				products: [],
-				loaded: false,
-				loading: false,
-				error: action.payload,
-			};
-		}
+    case productActions.ProductActionTypes.UPDATE_PRODUCT_FAIL: {
+      return {
+        ...state,
+        products: [],
+        loaded: false,
+        loading: false,
+        error: action.payload,
+      };
+    }
 
-		case productActions.ProductActionTypes.DELETE_PRODUCT: {
-			return{
-				...state,
-				loading: true,
-				productId: action.payload,
-			}
-		}
+    case productActions.ProductActionTypes.DELETE_PRODUCT: {
+      return{
+        ...state,
+        loading: true,
+        productId: action.payload,
+      };
+    }
 
     case productActions.ProductActionTypes.DELETE_PRODUCT_SUCCESS: {
       let newProducts = [...state.products];
@@ -161,7 +160,7 @@ export function productReducer(
         loading: false,
         loaded: true,
         products: newProducts
-      }
+      };
     }
 
     case productActions.ProductActionTypes.DELETE_PRODUCT_FAIL: {

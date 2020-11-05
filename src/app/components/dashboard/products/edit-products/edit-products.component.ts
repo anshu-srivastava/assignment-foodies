@@ -1,13 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import * as ProductActions from '../store/product.action';
-import * as fromProduct from '../store/products.reducer';
+import * as ProductActions from '../productsStore/product.action';
+import * as fromProduct from '../productsStore/products.reducer';
 import { Observable } from 'rxjs';
-import * as editProductActions from '../../../store/action';
-import { CustomBtnElement } from '../../../../lit-element/button-element';
+import * as editProductActions from '../../../appStore/action';
 
-console.assert(CustomBtnElement !== undefined);
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-products.component.html',
@@ -47,5 +45,6 @@ export class EditProductsComponent implements OnInit {
 
   Cancel(): void {
     this.store.dispatch(new editProductActions.HideEditProductAction());
+    window.scrollTo(0, 0);
   }
 }

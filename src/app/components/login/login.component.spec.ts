@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppMocks } from 'src/app/mocks/appMocks';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -18,7 +18,6 @@ describe('LoginComponent', () => {
         FormsModule,
       ],
       declarations: [LoginComponent],
-      providers: [AuthService],
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
@@ -26,5 +25,17 @@ describe('LoginComponent', () => {
 
   test('should exist', () => {
     expect(component).toBeDefined();
+  });
+
+  test('should validate form', () => {
+    component.ngOnInit();
+  });
+
+  test('should exist', () => {
+    const mockFormGroup = AppMocks.getMockFormGroup();
+    const navigateSpy = spyOn(component['router'], 'navigateByUrl');
+    component.authForm = mockFormGroup;
+    component.onSubmit();
+    expect(navigateSpy).toHaveBeenCalled();
   });
 });

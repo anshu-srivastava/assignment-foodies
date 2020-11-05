@@ -1,0 +1,36 @@
+{
+  "header": {
+    "heading": "Bienvenue aux gourmets",
+    "add-product-button": "Ajouter un produit",
+    "change-theme-button": "Change le thème",
+    "change-language": "Changer de langue"
+  },
+  "auth": {
+    "login-tab": "S'identifier",
+    "register-tab": "S'inscrire",
+    "first-name-text": "Prénom",
+    "last-name-text": "Nom de famille",
+    "email-text": "Email",
+    "password-text": "Mot de passe",
+    "registration-link": "Nouvel utilisateur? Cliquez ici pour vous inscrire",
+    "submit-button": "Soumettre",
+    "email-validation": "L'email est requis",
+    "password-validation": "Mot de passe requis",
+    "first-name-validation": "Le prénom est requis",
+    "last-name-validation": "Le nom est obligatoire",
+    "user-name-validation": "Nom d'utilisateur est nécessaire"
+  },
+  "card": {
+    "update-button": "Mise à jour",
+    "delete-button": "Supprimer"
+  },
+  "product-operations": {
+    "heading-text": "Entrez l'en-tête",
+    "add-product-text": "Ajouter un produit",
+    "edit-product-text": "Modifier le produit",
+    "description-text": "Entrez la description",
+    "imageUrl-text": "Saisissez l'URL de l'image",
+    "update-button": "Mettre à jour le produit",
+    "cancel-button": "Annuler"
+  }
+}

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as ProductActions from '../dashboard/products/store/product.action';
-import * as fromProduct from '../dashboard/products/store/products.reducer';
-import { Product } from './products/store/product.model';
+import * as ProductActions from '../dashboard/products/productsStore/product.action';
+import * as fromProduct from '../dashboard/products/productsStore/products.reducer';
+import { Product } from './products/productsStore/product.model';
 
-import { CustomBtnElement } from '../../lit-element/button-element';
-console.assert(CustomBtnElement !== undefined);
 
 @Component({
   selector: 'app-dashboard',
@@ -16,10 +14,10 @@ console.assert(CustomBtnElement !== undefined);
 export class DashboardComponent implements OnInit {
   id: number;
   products: any;
-  products$: Observable<Product[]>;
   showAddProductPopUp: boolean;
   addProductFormView: any;
   editProductFormView: any;
+  products$: Observable<Product[]>;
 
   constructor(private store: Store<any>) {
     this.getProducts();

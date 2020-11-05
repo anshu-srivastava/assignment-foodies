@@ -1,16 +1,17 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AuthService } from 'src/app/auth.service';
 import { ThemeService } from 'src/app/services/theme/theme.service';
-import * as ProductActions from '../store/action';
+import * as ProductActions from '../appStore/action';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Output() addProductView = new EventEmitter<any>();
   theme = 'SetTheme';
   showAddProductView: boolean;
@@ -18,12 +19,17 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private themeService: ThemeService,
+    private translateService: TranslateService,
     private store: Store<any>
   ) {
+    this.translateService.addLangs(['en', 'fr']);
+    this.translateService.setDefaultLang('en');
+
+    const browserLang = this.translateService.getBrowserLang();
+    this.translateService.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+
     this.themeService.isDarkTheme();
   }
-
-  ngOnInit(): void {}
 
   setTheme(): void {
     if (this.themeService.isDarkTheme()) {
@@ -45,6 +51,15 @@ export class HeaderComponent implements OnInit {
 
   addProduct(): void {
     this.store.dispatch(new ProductActions.ShowAddProductAction());
+  }
+
+  changeLanguage(): void {
+    const currenLang = this.translateService.currentLang;
+    if (currenLang === 'en') {
+      this.translateService.use('fr');
+    } else {
+      this.translateService.use('en');
+    }
   }
 
   logout(): void {
