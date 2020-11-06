@@ -28,9 +28,13 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "@polymer/lit-element": "^0.7.1",
+    "@storybook/addon-a11y": "^6.0.28",
+    "@storybook/addon-docs": "^6.0.28",
+    "@storybook/addon-knobs": "^6.0.28",
     "i18next": "^19.8.2",
     "lit-element": "^2.4.0",
     "rxjs": "~6.6.0",
+    "storybook-theme-knob": "0.0.8",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

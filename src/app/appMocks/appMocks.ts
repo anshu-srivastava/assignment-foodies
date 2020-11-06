@@ -55,10 +55,25 @@ export class AppMocks {
     };
   }
 
+   public static mockHeaderActions = () => {
+    return {
+      addProduct: () => { console.log('addProduct called'); },
+      logout: () => {console.log('logout called'); },
+      changeLanguage: () => { console.log('changeLanguage called'); },
+      changeTheme: () => { console.log('changeTheme called'); }
+    };
+  }
+
   public static mockProductActions = () => {
     return {
       cancel: () => {console.log('cancel called'); },
       onSubmit: () => {console.log('onSubmit called'); }
+    };
+  }
+
+  public static getrouterMock = () => {
+    return {
+      navigate: () => {},
     };
   }
 }
