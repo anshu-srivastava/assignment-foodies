@@ -769,10 +769,10 @@
     "classes": [
         {
             "name": "AppMocks",
-            "id": "class-AppMocks-5901cf21b534132252039b91bfcb23ea",
+            "id": "class-AppMocks-9c118ed33f1fac1464ae64f32355c9bd",
             "file": "src/app/appMocks/appMocks.ts",
             "type": "class",
-            "sourceCode": "import { FormBuilder } from '@angular/forms';\nimport { of } from 'rxjs';\n\nexport class AppMocks {\n  public static getThemeServiceMock = () => {\n    return {\n      isDarkTheme: jest.fn(() => false),\n      setDarkTheme: jest.fn(() => {}),\n      setLightTheme: jest.fn(() => {}),\n      setActiveTheme: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockStoreService = () => {\n    return {\n      dispatch: (v) => jest.fn(() => {}),\n      pipe: jest.fn(() => of({})),\n      subscribe: jest.fn(() => of({})),\n    };\n  }\n\n  public static getMockAuthService = () => {\n    return {\n      signIn: jest.fn(() => {}),\n      register: jest.fn(() => {}),\n      isLoggedIn: jest.fn(() => {}),\n      logout: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockProductService = () => {\n    return {\n      addProductPopUp: jest.fn(() => {}),\n      hideAddProductPopUp: jest.fn(() => {}),\n      getProducts: jest.fn(() => {}),\n      editProduct: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockFormGroup = () => {\n    const myModel = {\n      valid: true,\n      value: null,\n    };\n    const fb = new FormBuilder();\n    return fb.group(myModel);\n  }\n\n  public static mockCardActions = () => {\n    return {\n      updateProduct: (event) => {event.stopPropagation(); console.log('updateProduct called'); },\n      deleteProduct: (event) => { event.stopPropagation(); console.log('deleteProduct called'); },\n      addProduct: (event) => {event.stopPropagation(); console.log('addProduct called'); },\n      getProducts: (event) => {event.stopPropagation(); console.log('getProduct called'); }\n    };\n  }\n\n  public static mockProductActions = () => {\n    return {\n      cancel: () => {console.log('cancel called'); },\n      onSubmit: () => {console.log('onSubmit called'); }\n    };\n  }\n}\n\n\n\n",
+            "sourceCode": "import { FormBuilder } from '@angular/forms';\nimport { of } from 'rxjs';\n\nexport class AppMocks {\n  public static getThemeServiceMock = () => {\n    return {\n      isDarkTheme: jest.fn(() => false),\n      setDarkTheme: jest.fn(() => {}),\n      setLightTheme: jest.fn(() => {}),\n      setActiveTheme: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockStoreService = () => {\n    return {\n      dispatch: (v) => jest.fn(() => {}),\n      pipe: jest.fn(() => of({})),\n      subscribe: jest.fn(() => of({})),\n    };\n  }\n\n  public static getMockAuthService = () => {\n    return {\n      signIn: jest.fn(() => {}),\n      register: jest.fn(() => {}),\n      isLoggedIn: jest.fn(() => {}),\n      logout: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockProductService = () => {\n    return {\n      addProductPopUp: jest.fn(() => {}),\n      hideAddProductPopUp: jest.fn(() => {}),\n      getProducts: jest.fn(() => {}),\n      editProduct: jest.fn(() => {}),\n    };\n  }\n\n  public static getMockFormGroup = () => {\n    const myModel = {\n      valid: true,\n      value: null,\n    };\n    const fb = new FormBuilder();\n    return fb.group(myModel);\n  }\n\n  public static mockCardActions = () => {\n    return {\n      updateProduct: (event) => {event.stopPropagation(); console.log('updateProduct called'); },\n      deleteProduct: (event) => { event.stopPropagation(); console.log('deleteProduct called'); },\n      addProduct: (event) => {event.stopPropagation(); console.log('addProduct called'); },\n      getProducts: (event) => {event.stopPropagation(); console.log('getProduct called'); }\n    };\n  }\n\n   public static mockHeaderActions = () => {\n    return {\n      addProduct: () => { console.log('addProduct called'); },\n      logout: () => {console.log('logout called'); },\n      changeLanguage: () => { console.log('changeLanguage called'); },\n      changeTheme: () => { console.log('changeTheme called'); }\n    };\n  }\n\n  public static mockProductActions = () => {\n    return {\n      cancel: () => {console.log('cancel called'); },\n      onSubmit: () => {console.log('onSubmit called'); }\n    };\n  }\n\n  public static getrouterMock = () => {\n    return {\n      navigate: () => {},\n    };\n  }\n}\n\n\n\n",
             "properties": [
                 {
                     "name": "getMockAuthService",
@@ -819,6 +819,17 @@
                     ]
                 },
                 {
+                    "name": "getrouterMock",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 74,
+                    "modifierKind": [
+                        115
+                    ]
+                },
+                {
                     "name": "getThemeServiceMock",
                     "defaultValue": "() => {...}",
                     "type": "",
@@ -841,12 +852,23 @@
                     ]
                 },
                 {
-                    "name": "mockProductActions",
+                    "name": "mockHeaderActions",
                     "defaultValue": "() => {...}",
                     "type": "",
                     "optional": false,
                     "description": "",
                     "line": 58,
+                    "modifierKind": [
+                        115
+                    ]
+                },
+                {
+                    "name": "mockProductActions",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 67,
                     "modifierKind": [
                         115
                     ]
@@ -3099,15 +3121,7 @@
                 "subtype": "variable",
                 "file": "src/stories/add-product.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "addProductView",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\n  component: AddProductComponent,\n  props: {\n    addProduct: StorybookMocks.AppMocks.mockCardActions().addProduct,\n    name: { touched: false, invalid: false },\n    price: { touched: false, invalid: false },\n    imageUrlPreview: '',\n    productOperationInfo: {\n      productOperation: 'Add',\n      disableFormFields: false,\n    },\n    buttonText: 'add-button',\n    cancel: StorybookMocks.AppMocks.mockProductActions().cancel,\n  },\n})"
             },
             {
                 "name": "card",
@@ -3115,7 +3129,7 @@
                 "subtype": "variable",
                 "file": "src/stories/card.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\n  component: CardComponent,\n  props: {\n    product: object('product', { ...productData }),\n    editProduct: StorybookMocks.AppMocks.mockCardActions().updateProduct,\n    deleteProduct: StorybookMocks.AppMocks.mockCardActions().deleteProduct,\n  },\n})"
             },
             {
                 "name": "dark",
@@ -3124,14 +3138,6 @@
                 "file": "src/app/theme/theme.ts",
                 "type": "Theme",
                 "defaultValue": "{\n  name: 'dark',\n  properties: {\n    '--foreground-default': '#5C7D99',\n    '--foreground-secondary': '#A3B9CC',\n    '--foreground-tertiary': '#F4FAFF',\n    '--foreground-quaternary': '#E5E5E5',\n    '--foreground-light': '#FFFFFF',\n\n    '--background-default': '#797C80',\n    '--background-secondary': '#41474D',\n    '--background-tertiary': '#1c5069',\n    '--background-light': '#41474D',\n\n    '--primary-default': '#5DFDCB',\n    '--primary-dark': '#24B286',\n    '--primary-light': '#f3efef',\n\n    '--error-default': '#EF3E36',\n    '--error-dark': '#800600',\n    '--error-light': '#FFCECC',\n\n    '--background-tertiary-shadow': '0 1px 3px 0 rgba(8, 9, 10, 0.5)',\n  },\n}"
-            },
-            {
-                "name": "editProduct",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/edit-product.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "environment",
@@ -3150,20 +3156,20 @@
                 "defaultValue": "{\n  production: false,\n  login: serverBaseUrl + '/auth/login',\n  register: serverBaseUrl + '/auth/register',\n  getProducts: serverBaseUrl + '/products',\n  addProducts: serverBaseUrl + '/products',\n  deleteProducts: serverBaseUrl + '/products/{id}',\n  getProductsById: serverBaseUrl + '/products/{id}',\n  editProductsBy: serverBaseUrl + '/products/{id}',\n}"
             },
             {
+                "name": "FoodieButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/lit-button.stories.ts",
+                "type": "",
+                "defaultValue": "() =>\n  html`\n    <foodie-button>\n      ${text('Label', 'foodie button')}\n    </foodie-button>\n  `"
+            },
+            {
                 "name": "getError",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/dashboard/products/productsStore/products.reducer.ts",
                 "type": "",
                 "defaultValue": "createSelector(\n  getProductFeatureState,\n  (state: ProductState) => state.error\n)"
-            },
-            {
-                "name": "getProduct",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/dashboard.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "getProductById",
@@ -3209,6 +3215,22 @@
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/components/appStore/reducer.ts",
+                "type": "State",
+                "defaultValue": "{\n    addProductFormView : false,\n    editProductFormView : false,\n  }"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/edit-product.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  getProductById: {},\n  selectedProduct: null,\n  dispatch: () => {},\n  pipe: () => {},\n}"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/components/dashboard/products/productsStore/products.reducer.ts",
                 "type": "ProductState",
                 "defaultValue": "{\n  products: [],\n  loading: false,\n  loaded: false,\n  error: '',\n  productId: null,\n  selectedProduct: null,\n}"
@@ -3217,9 +3239,9 @@
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/appStore/reducer.ts",
-                "type": "State",
-                "defaultValue": "{\n    addProductFormView : false,\n    editProductFormView : false,\n  }"
+                "file": "src/stories/dashboard.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  addProductFormView: {},\n  selectedProduct: {},\n  dispatch: () => {},\n  pipe: () => {},\n}"
             },
             {
                 "name": "light",
@@ -3230,20 +3252,36 @@
                 "defaultValue": "{\n  name: 'light',\n  properties: {\n    '--foreground-default': '#3d4852',\n    '--foreground-secondary': '#41474D',\n    '--foreground-tertiary': '#797C80',\n    '--foreground-quaternary': '#F4FAFF',\n    '--foreground-light': '#41474D',\n\n    '--background-default': '#F4FAFF',\n    '--background-secondary': '#A3B9CC',\n    '--background-tertiary': '#aaadaf',\n    '--background-light': '#FFFFFF',\n\n    '--primary-default': '#5DFDCB',\n    '--primary-dark': '#24B286',\n    '--primary-light': '#f5fbf9',\n\n    '--error-default': '#EF3E36',\n    '--error-dark': '#800600',\n    '--error-light': '#FFCECC',\n\n    '--background-tertiary-shadow': '0 1px 3px 0 rgba(92, 125, 153, 0.5)',\n  },\n}"
             },
             {
-                "name": "newItemEvent",
+                "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/card.stories.ts",
+                "file": "src/stories/header.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\n  component: HeaderComponent,\n  props: {\n    isAuthenticated: () => true,\n    addProduct: StorybookMocks.AppMocks.mockHeaderActions().addProduct,\n    logout: StorybookMocks.AppMocks.mockHeaderActions().logout,\n    changeLanguage: StorybookMocks.AppMocks.mockHeaderActions().changeLanguage,\n    changeTheme: StorybookMocks.AppMocks.mockHeaderActions().changeTheme,\n  },\n  args: {},\n})"
             },
             {
-                "name": "newItemEventId",
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/header.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: HeaderComponent,\n  props: {\n    isAuthenticated: () => false,\n    addProduct: StorybookMocks.AppMocks.mockHeaderActions().addProduct,\n    logout: StorybookMocks.AppMocks.mockHeaderActions().logout,\n    changeLanguage: StorybookMocks.AppMocks.mockHeaderActions()\n      .changeLanguage,\n    changeTheme: StorybookMocks.AppMocks.mockHeaderActions().changeTheme,\n  },\n})"
+            },
+            {
+                "name": "productData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/card.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "object",
+                "defaultValue": "{\n  id: '1',\n  heading: 'Pasta',\n  description:\n    'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking',\n  imageUrl:\n    'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',\n}"
+            },
+            {
+                "name": "productData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/dashboard.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  id: '1',\n  heading: 'Pasta',\n  description:\n    'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking',\n  imageUrl:\n    'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',\n}"
             },
             {
                 "name": "serverBaseUrl",
@@ -3273,14 +3311,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/register.stories.ts",
-                "type": "Story<RegisterComponent>",
-                "defaultValue": "(args: RegisterComponent) => ({\n  component: RegisterComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/login.stories.ts",
                 "type": "Story<LoginComponent>",
                 "defaultValue": "(args: LoginComponent) => ({\n  component: LoginComponent,\n  props: args,\n})"
@@ -3289,41 +3319,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
+                "file": "src/stories/register.stories.ts",
+                "type": "Story<RegisterComponent>",
+                "defaultValue": "(args: RegisterComponent) => ({\n  component: RegisterComponent,\n  props: args,\n})"
             },
             {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args: CardComponent) => ({\n    component: CardComponent,\n    props: args,\n})"
-            },
-            {
-                "name": "Template",
+                "name": "updateProduct",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/edit-product.stories.ts",
-                "type": "Story<EditProductsComponent>",
-                "defaultValue": "(args: EditProductsComponent) => ({\n  component: EditProductsComponent,\n  props: args,\n})"
+                "type": "",
+                "defaultValue": "() => ({\n  component: EditProductsComponent,\n  props: {\n    productForm: StorybookMocks.AppMocks.mockCardActions().updateProduct,\n    heading: { touched: false, invalid: false },\n    description: { touched: false, invalid: false },\n    imageUrlPreview:\n      'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',\n    productOperationInfo: {\n      productOperation: 'Update',\n      disableFormFields: false,\n    },\n    buttonText: 'update-button',\n    cancel: StorybookMocks.AppMocks.mockProductActions().cancel,\n  },\n})"
             },
             {
-                "name": "Template",
+                "name": "viewProduct",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/dashboard.stories.ts",
-                "type": "Story<DashboardComponent>",
-                "defaultValue": "(args: DashboardComponent) => ({\n  component: DashboardComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/add-product.stories.ts",
-                "type": "Story<AddProductComponent>",
-                "defaultValue": "(args: AddProductComponent) => ({\n  component: AddProductComponent,\n  props: args,\n})"
+                "type": "",
+                "defaultValue": "() => ({\n         component: DashboardComponent,\n         props: {\n           product: object('product', { ...productData }),\n           editProduct: StorybookMocks.AppMocks.mockCardActions().updateProduct,\n           name: { touched: false, invalid: false },\n           price: { touched: false, invalid: false },\n           imageUrlPreview: '',\n           productOperationInfo: {\n             productOperation: 'Add',\n             disableFormFields: false,\n           },\n         },\n       })"
             }
         ],
         "functions": [
@@ -3511,33 +3525,7 @@
                     "subtype": "variable",
                     "file": "src/stories/add-product.stories.ts",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/add-product.stories.ts",
-                    "type": "Story<AddProductComponent>",
-                    "defaultValue": "(args: AddProductComponent) => ({\n  component: AddProductComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/stories/header.stories.ts": [
-                {
-                    "name": "addProductView",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header.stories.ts",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
+                    "defaultValue": "() => ({\n  component: AddProductComponent,\n  props: {\n    addProduct: StorybookMocks.AppMocks.mockCardActions().addProduct,\n    name: { touched: false, invalid: false },\n    price: { touched: false, invalid: false },\n    imageUrlPreview: '',\n    productOperationInfo: {\n      productOperation: 'Add',\n      disableFormFields: false,\n    },\n    buttonText: 'add-button',\n    cancel: StorybookMocks.AppMocks.mockProductActions().cancel,\n  },\n})"
                 }
             ],
             "src/stories/card.stories.ts": [
@@ -3547,31 +3535,15 @@
                     "subtype": "variable",
                     "file": "src/stories/card.stories.ts",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "() => ({\n  component: CardComponent,\n  props: {\n    product: object('product', { ...productData }),\n    editProduct: StorybookMocks.AppMocks.mockCardActions().updateProduct,\n    deleteProduct: StorybookMocks.AppMocks.mockCardActions().deleteProduct,\n  },\n})"
                 },
                 {
-                    "name": "newItemEvent",
+                    "name": "productData",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/card.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "newItemEventId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/card.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/card.stories.ts",
-                    "type": "Story<CardComponent>",
-                    "defaultValue": "(args: CardComponent) => ({\n    component: CardComponent,\n    props: args,\n})"
+                    "type": "object",
+                    "defaultValue": "{\n  id: '1',\n  heading: 'Pasta',\n  description:\n    'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking',\n  imageUrl:\n    'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',\n}"
                 }
             ],
             "src/app/theme/theme.ts": [
@@ -3590,24 +3562,6 @@
                     "file": "src/app/theme/theme.ts",
                     "type": "Theme",
                     "defaultValue": "{\n  name: 'light',\n  properties: {\n    '--foreground-default': '#3d4852',\n    '--foreground-secondary': '#41474D',\n    '--foreground-tertiary': '#797C80',\n    '--foreground-quaternary': '#F4FAFF',\n    '--foreground-light': '#41474D',\n\n    '--background-default': '#F4FAFF',\n    '--background-secondary': '#A3B9CC',\n    '--background-tertiary': '#aaadaf',\n    '--background-light': '#FFFFFF',\n\n    '--primary-default': '#5DFDCB',\n    '--primary-dark': '#24B286',\n    '--primary-light': '#f5fbf9',\n\n    '--error-default': '#EF3E36',\n    '--error-dark': '#800600',\n    '--error-light': '#FFCECC',\n\n    '--background-tertiary-shadow': '0 1px 3px 0 rgba(92, 125, 153, 0.5)',\n  },\n}"
-                }
-            ],
-            "src/stories/edit-product.stories.ts": [
-                {
-                    "name": "editProduct",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/edit-product.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/edit-product.stories.ts",
-                    "type": "Story<EditProductsComponent>",
-                    "defaultValue": "(args: EditProductsComponent) => ({\n  component: EditProductsComponent,\n  props: args,\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -3636,6 +3590,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "string",
                     "defaultValue": "'http://localhost:8000'"
+                }
+            ],
+            "src/stories/lit-button.stories.ts": [
+                {
+                    "name": "FoodieButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/lit-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() =>\n  html`\n    <foodie-button>\n      ${text('Label', 'foodie button')}\n    </foodie-button>\n  `"
                 }
             ],
             "src/app/components/dashboard/products/productsStore/products.reducer.ts": [
@@ -3678,24 +3642,6 @@
                     "file": "src/app/components/dashboard/products/productsStore/products.reducer.ts",
                     "type": "ProductState",
                     "defaultValue": "{\n  products: [],\n  loading: false,\n  loaded: false,\n  error: '',\n  productId: null,\n  selectedProduct: null,\n}"
-                }
-            ],
-            "src/stories/dashboard.stories.ts": [
-                {
-                    "name": "getProduct",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/dashboard.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/dashboard.stories.ts",
-                    "type": "Story<DashboardComponent>",
-                    "defaultValue": "(args: DashboardComponent) => ({\n  component: DashboardComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/components/appStore/action.ts": [
@@ -3742,14 +3688,66 @@
                     "defaultValue": "{\n    addProductFormView : false,\n    editProductFormView : false,\n  }"
                 }
             ],
-            "src/stories/register.stories.ts": [
+            "src/stories/edit-product.stories.ts": [
                 {
-                    "name": "Template",
+                    "name": "initialState",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/register.stories.ts",
-                    "type": "Story<RegisterComponent>",
-                    "defaultValue": "(args: RegisterComponent) => ({\n  component: RegisterComponent,\n  props: args,\n})"
+                    "file": "src/stories/edit-product.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  getProductById: {},\n  selectedProduct: null,\n  dispatch: () => {},\n  pipe: () => {},\n}"
+                },
+                {
+                    "name": "updateProduct",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/edit-product.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: EditProductsComponent,\n  props: {\n    productForm: StorybookMocks.AppMocks.mockCardActions().updateProduct,\n    heading: { touched: false, invalid: false },\n    description: { touched: false, invalid: false },\n    imageUrlPreview:\n      'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',\n    productOperationInfo: {\n      productOperation: 'Update',\n      disableFormFields: false,\n    },\n    buttonText: 'update-button',\n    cancel: StorybookMocks.AppMocks.mockProductActions().cancel,\n  },\n})"
+                }
+            ],
+            "src/stories/dashboard.stories.ts": [
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/dashboard.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  addProductFormView: {},\n  selectedProduct: {},\n  dispatch: () => {},\n  pipe: () => {},\n}"
+                },
+                {
+                    "name": "productData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/dashboard.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  id: '1',\n  heading: 'Pasta',\n  description:\n    'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking',\n  imageUrl:\n    'https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80',\n}"
+                },
+                {
+                    "name": "viewProduct",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/dashboard.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n         component: DashboardComponent,\n         props: {\n           product: object('product', { ...productData }),\n           editProduct: StorybookMocks.AppMocks.mockCardActions().updateProduct,\n           name: { touched: false, invalid: false },\n           price: { touched: false, invalid: false },\n           imageUrlPreview: '',\n           productOperationInfo: {\n             productOperation: 'Add',\n             disableFormFields: false,\n           },\n         },\n       })"
+                }
+            ],
+            "src/stories/header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/header.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: HeaderComponent,\n  props: {\n    isAuthenticated: () => true,\n    addProduct: StorybookMocks.AppMocks.mockHeaderActions().addProduct,\n    logout: StorybookMocks.AppMocks.mockHeaderActions().logout,\n    changeLanguage: StorybookMocks.AppMocks.mockHeaderActions().changeLanguage,\n    changeTheme: StorybookMocks.AppMocks.mockHeaderActions().changeTheme,\n  },\n  args: {},\n})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/header.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: HeaderComponent,\n  props: {\n    isAuthenticated: () => false,\n    addProduct: StorybookMocks.AppMocks.mockHeaderActions().addProduct,\n    logout: StorybookMocks.AppMocks.mockHeaderActions().logout,\n    changeLanguage: StorybookMocks.AppMocks.mockHeaderActions()\n      .changeLanguage,\n    changeTheme: StorybookMocks.AppMocks.mockHeaderActions().changeTheme,\n  },\n})"
                 }
             ],
             "src/stories/login.stories.ts": [
@@ -3760,6 +3758,16 @@
                     "file": "src/stories/login.stories.ts",
                     "type": "Story<LoginComponent>",
                     "defaultValue": "(args: LoginComponent) => ({\n  component: LoginComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/register.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/register.stories.ts",
+                    "type": "Story<RegisterComponent>",
+                    "defaultValue": "(args: RegisterComponent) => ({\n  component: RegisterComponent,\n  props: args,\n})"
                 }
             ]
         },
@@ -4025,7 +4033,7 @@
                 "linktype": "classe",
                 "name": "AppMocks",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -4567,16 +4575,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/add-product.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -4591,27 +4589,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "newItemEvent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "newItemEventId",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
+                "name": "productData",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4621,7 +4599,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "getProduct",
+                "name": "initialState",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4631,7 +4609,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "productData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dashboard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "viewProduct",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4641,7 +4629,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "editProduct",
+                "name": "initialState",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4651,7 +4639,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "updateProduct",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4661,7 +4649,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "addProductView",
+                "name": "LoggedIn",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4671,7 +4659,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/lit-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FoodieButton",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

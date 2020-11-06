@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppMocks } from 'src/app/mocks/appMocks';
 import { Store } from '@ngrx/store';
 
 import { EditProductsComponent } from './edit-products.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppMocks } from 'src/app/appMocks/appMocks';
 
 describe('EditProductsComponent', () => {
   let component: EditProductsComponent;
