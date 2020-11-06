@@ -2,6 +2,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as ProductActions from '../productsStore/product.action';
 import * as productEditActions from '../../../appStore/action';
+import { CustomImgElement } from 'src/app/lit-element/img-element';
+import { CustomCardElement } from 'src/app/lit-element/card-element';
+console.assert(CustomImgElement !== undefined);
+console.assert(CustomCardElement !== undefined);
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

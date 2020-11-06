@@ -1,14 +1,23 @@
 import { LitElement, html, customElement, property, css } from 'lit-element';
 
-@customElement('foodie-button')
-export class CustomBtnElement extends LitElement {
+@customElement('foodie-input')
+export class CustomInputElement extends LitElement {
   @property({ type: String })
-  title;
+  type;
+
+  @property({ type: String })
+  placeholder;
+
+  @property({ type: String })
+  formControlName;
+
+  @property({ type: String })
+  ariaLabel;
 
   // tslint:disable-next-line: typedef
   static get styles() {
     return css`
-      .lit-btn {
+      .lit-input {
         background: var(--foreground-default);
         color: var(--primary-light);
         border: 2px solid #808080a3;
@@ -18,7 +27,7 @@ export class CustomBtnElement extends LitElement {
         cursor: pointer;
         box-shadow: var(--background-tertiary-shadow);
       }
-      .lit-btn:hover {
+      .lit-input:hover {
         border: 2px solid blue;
       }
     `;
@@ -26,6 +35,12 @@ export class CustomBtnElement extends LitElement {
 
   // tslint:disable-next-line: typedef
   render() {
-    return html` <button class="lit-btn">${this.title}</button> `;
+    return html` <input
+      type="${this.type}"
+      placeholder="${this.placeholder}"
+      formControlName="${this.formControlName}"
+      aria-label="${this.ariaLabel}"
+      class="lit-input"
+    />`;
   }
 }
