@@ -1,21 +1,20 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, customElement, css } from 'lit-element';
 
-@customElement('foodie-card')
-export class CustomCardElement extends LitElement {
+@customElement('foodie-card-footer')
+export class CustomCardFooterElement extends LitElement {
   constructor() {
     super();
   }
   // tslint:disable-next-line: typedef
   static get styles() {
     return css`
-      .card {
+      .card-footer {
         border: 2px solid #808080a3;
         border-radius: 4px;
         width: inherit;
         hight: inherit;
-        cursor: pointer;
       }
-      .card:hover {
+      .card-footer:hover {
         border: 2px solid blue;;
       }
     `;
@@ -23,7 +22,7 @@ export class CustomCardElement extends LitElement {
 
   // tslint:disable-next-line: typedef
   render() {
-    return html` <div class="card">
+    return html` <div class="card-footer">
       <slot></slot>
     </div>`;
   }

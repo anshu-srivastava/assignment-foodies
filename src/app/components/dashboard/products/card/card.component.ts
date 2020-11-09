@@ -4,8 +4,12 @@ import * as ProductActions from '../productsStore/product.action';
 import * as productEditActions from '../../../appStore/action';
 import { CustomImgElement } from 'src/app/lit-element/img-element';
 import { CustomCardElement } from 'src/app/lit-element/card-element';
+import { CustomCardHeaderElement } from 'src/app/lit-element/card-header-element';
+import { CustomCardFooterElement } from 'src/app/lit-element/card-footer-element';
 console.assert(CustomImgElement !== undefined);
 console.assert(CustomCardElement !== undefined);
+console.assert(CustomCardHeaderElement !== undefined);
+console.assert(CustomCardFooterElement !== undefined);
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
