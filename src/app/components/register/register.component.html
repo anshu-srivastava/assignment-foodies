@@ -7,7 +7,7 @@
         <form [formGroup]="authForm" class="container" (ngSubmit)="onSubmit()">
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
-              <input type="text" placeholder="{{'auth.first-name-text' | translate}}" formControlName="firstName" aria-label="Enter First Name">
+              <foodie-input type="text" label="{{'auth.first-name-text' | translate}}"(val-change)="onFirstNameClick($event.detail.value)" [outline]="true" aria-label="Enter First Name"></foodie-input>
             </div>
             <div *ngIf="isSubmitted && formControls.firstName.errors" class="error-block">
               <div *ngIf="formControls.firstName.errors.required">{{'auth.first-name-validation' | translate}}</div>
@@ -15,7 +15,7 @@
           </div>
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.lastName.errors }">
-              <input type="text" placeholder="{{'auth.last-name-text' | translate}}" formControlName="lastName" aria-label="Enter Last Name">
+              <foodie-input type="text" label="{{'auth.last-name-text' | translate}}" (val-change)="onLastNameClick($event.detail.value)" [outline]="true" aria-label="Enter Last Name"></foodie-input>
             </div>
             <div *ngIf="isSubmitted && formControls.lastName.errors" class="error-block">
               <div *ngIf="formControls.lastName.errors.required">{{'auth.last-name-validation' | translate}}</div>
@@ -23,7 +23,7 @@
           </div>
           <div class="form-group top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-              <input type="email" placeholder="{{'auth.email-text' | translate}}" formControlName="email" aria-label="Enter Email">
+            <foodie-input type="email" label="{{'auth.email-text' | translate}}" (val-change)="onEmailClick($event.detail.value)" [outline]="true" aria-label="Enter Email"></foodie-input>
             </div>
             <div *ngIf="isSubmitted && formControls.email.errors" class="error-block">
               <div *ngIf="formControls.email.errors.required">{{'auth.email-validation' | translate}}</div>
@@ -31,7 +31,7 @@
           </div>
           <div class="top-space">
             <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-              <input type="password" placeholder="{{'auth.password-text' | translate}}" formControlName="password" aria-label="Enter Password">
+            <foodie-input type="password" label="{{'auth.password-text' | translate}}" (val-change)="onPasswordClick($event.detail.value)" [outline]="true" aria-label="Enter Password"></foodie-input>
             </div>
             <div *ngIf="isSubmitted && formControls.password.errors" class="error-block">
               <div *ngIf="formControls.password.errors.required">{{'auth.password-validation' | translate}}</div>

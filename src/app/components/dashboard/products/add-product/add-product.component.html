@@ -5,32 +5,17 @@
     </header>
     <form [formGroup]="addProductForm">
       <div class="input-wrapper">
-        <input
-          type="text"
-          placeholder="{{'product-operations.heading-text' | translate}}"
-          formControlName="heading"
-          aria-label="Enter Heading"
-        />
+        <foodie-input type="text" label="{{'product-operations.heading-text' | translate}}" (val-change)="onHeadingClick($event.detail.value)" [outline]="true" aria-label="Enter Heading"></foodie-input>
       </div>
       <div class="input-wrapper">
-        <input
-          type="text"
-          placeholder="{{'product-operations.description-text' | translate}}"
-          formControlName="description"
-          aria-label="Enter description"
-        />
+        <foodie-textarea  rows="6" cols="50" label="{{'product-operations.description-text' | translate}}" (val-change)="onDescriptionClick($event.detail.value)" [outline]="true" aria-label="Enter description"></foodie-textarea>
       </div>
       <div class="input-wrapper">
-        <input
-          type="text"
-          placeholder="{{'product-operations.imageUrl-text' | translate}}"
-          formControlName="imageUrl"
-          aria-label="Enter imageUrl"
-        />
+        <foodie-input type="text" label="{{'product-operations.imageUrl-text' | translate}}" (val-change)="onImgClick($event.detail.value)" [outline]="true" aria-label="Enter ImageUrl"></foodie-input>
       </div>
     </form>
     <div class="btn-wrapper">
-      <foodie-button title="{{'product-operations.add-product-text' | translate}}" (click)="addProduct()" aria-label="Add Product"></foodie-button>
+      <foodie-button title="{{'product-operations.add-button' | translate}}" (click)="addProduct()" aria-label="Add Product"></foodie-button>
       <foodie-button title="{{'product-operations.cancel-button' | translate}}" (click)="Cancel()" aria-label="Cancel"></foodie-button>
     </div>
   </div>

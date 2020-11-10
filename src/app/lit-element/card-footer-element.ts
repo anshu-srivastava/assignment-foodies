@@ -9,13 +9,9 @@ export class CustomCardFooterElement extends LitElement {
   static get styles() {
     return css`
       .card-footer {
-        border: 2px solid #808080a3;
         border-radius: 4px;
         width: inherit;
         hight: inherit;
-      }
-      .card-footer:hover {
-        border: 2px solid blue;;
       }
     `;
   }

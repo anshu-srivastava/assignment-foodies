@@ -21,16 +21,20 @@
         "user-name-validation": "User Name is required"
     },
     "card": {
-      "update-button": "Update",
+      "edit-button": "Edit",
       "delete-button": "Delete"
     },
     "product-operations": {
       "heading-text": "Enter heading",
-      "add-product-text": "Add Product",
-      "edit-product-text": "Edit Product",
       "description-text": "Enter description",
       "imageUrl-text": "Enter image URL",
-      "update-button": "Update Product",
+      "edit-heading": "Edit heading",
+      "edit-description": "Edit description",
+      "edit-imageUrl": "Edit image URL",
+      "edit-product-text": "Edit Product",
+      "add-product-text": "Add Product",
+      "add-button":"Add",
+      "save-button": "Save",
       "cancel-button": "Cancel"
     }
 }

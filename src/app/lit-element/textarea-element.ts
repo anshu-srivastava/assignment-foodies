@@ -1,24 +1,24 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, customElement, css } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
 
-@customElement('foodie-input')
-export class CustomInputElement extends LitElement {
-  type: string;
+@customElement('foodie-textarea')
+export class CustomTextareaElement extends LitElement {
   value: string;
-  disabled: boolean;
   outline: boolean;
   inputValue: string;
   label: string;
+  rows: string;
+  cols: string;
 
   constructor() {
     super();
     // initialize the properties
-    this.type = '';
     this.value = '';
-    this.disabled = false;
     this.outline = false;
     this.inputValue = '';
     this.label = '';
+    this.rows = '';
+    this.cols = '';
   }
   // tslint:disable-next-line: typedef
   static get styles() {
@@ -30,9 +30,10 @@ export class CustomInputElement extends LitElement {
         position: relative;
         margin: 1rem 0;
       }
-      input.outline {
+      textarea.outline {
         border: 2px solid rgba(128, 128, 128, 0.64);
         border-radius: 5px;
+        min-height: 80px;
         width: -webkit-fill-available;
       }
       label {
@@ -49,9 +50,10 @@ export class CustomInputElement extends LitElement {
         transform-origin: left top;
         pointer-events: none;
       }
-      input {
-        font-size: 1.3rem;
+      textarea {
+        font-size: 1.5rem;
         outline: none;
+        width: -webkit-fill-available;
         border: none;
         border-radius: 0px;
         padding: 1rem 0.6rem;
@@ -64,26 +66,22 @@ export class CustomInputElement extends LitElement {
         width: 95%;
         margin-right: auto;
       }
-      input:focus {
+      textarea:focus {
         border: 3px solid blue;
       }
-      input:focus + label {
+      textarea:focus + label {
         color: #b949d5;
         top: 0;
         transform: translateY(-50%) scale(0.9);
       }
-      input:not(:placeholder-shown) + label {
+      textarea:not(:placeholder-shown) + label {
         top: 0;
         transform: translateY(-50%) scale(0.9);
         border-radius: 2px;
       }
-      input:focus:not(.outline) ~ label,
-      input:not(:placeholder-shown):not(.outline) ~ label {
+      textarea:focus:not(.outline) ~ label,
+      textarea:not(:placeholder-shown):not(.outline) ~ label {
         padding-left: 0px;
-      }
-      input:disabled,
-      input:disabled ~ .label {
-        opacity: 0.5;
       }
     `;
   }
@@ -92,17 +90,19 @@ export class CustomInputElement extends LitElement {
   render() {
     return html`
       <div class="form-group">
-        <input
+        <textarea
           class=${classMap({
             outline: this.outline,
           })}
-          type="${this.type}"
+          row="${this.rows}"
+          cols="${this.cols}"
           .value="${this.inputValue}"
           @input="${this.inputHandler}"
-          ?disabled="${this.disabled}"
-        />
+        >
+          <slot></slot>
+        </textarea
+        >
         <label>${this.label}</label>
-        <slot></slot>
       </div>
     `;
   }
@@ -118,12 +118,12 @@ export class CustomInputElement extends LitElement {
   // tslint:disable-next-line: typedef
   static get properties() {
     return {
-      type: { type: String },
       value: { type: String },
       outline: { type: Boolean },
-      disabled: { type: Boolean },
       inputValue: { type: String },
-      label: {type: String}
+      rows: { type: String },
+      cols: { type: String },
+      label: { type: String },
     };
   }
 }

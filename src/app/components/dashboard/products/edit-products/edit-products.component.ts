@@ -5,6 +5,11 @@ import * as ProductActions from '../productsStore/product.action';
 import * as fromProduct from '../productsStore/products.reducer';
 import { Observable } from 'rxjs';
 import * as editProductActions from '../../../appStore/action';
+import { CustomInputElement } from 'src/app/lit-element/input-element';
+import { CustomTextareaElement } from 'src/app/lit-element/textarea-element';
+
+console.assert(CustomInputElement !== undefined);
+console.assert(CustomTextareaElement !== undefined);
 
 @Component({
   selector: 'app-edit-product',
@@ -30,21 +35,35 @@ export class EditProductsComponent implements OnInit {
     this.store.dispatch(new ProductActions.LoadProduct(id));
     const product$: Observable<any> = this.store.pipe(
       select(fromProduct.getProductById)
-      );
+    );
     product$.subscribe((formData) => {
-    if (formData) {
+      if (formData) {
         this.editProductForm.patchValue(formData);
       }
     });
   }
 
   editProduct(): void {
-    this.store.dispatch(new ProductActions.UpdateProduct(this.editProductForm.value));
+    this.store.dispatch(
+      new ProductActions.UpdateProduct(this.editProductForm.value)
+    );
     this.store.dispatch(new editProductActions.HideEditProductAction());
   }
 
   Cancel(): void {
     this.store.dispatch(new editProductActions.HideEditProductAction());
     window.scrollTo(0, 0);
+  }
+
+  onHeadingClick(event): void {
+    this.editProductForm.controls.heading.setValue(event);
+  }
+
+  onDescriptionClick(event): void {
+    this.editProductForm.controls.description.setValue(event);
+  }
+
+  onImgClick(event): void {
+    this.editProductForm.controls.imageUrl.setValue(event);
   }
 }
