@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
-import { CustomInputElement } from 'src/app/lit-element/input-element';
-console.assert(CustomInputElement !== undefined);
-
 
 @Component({
   selector: 'app-login',

@@ -4,11 +4,7 @@ import { Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as ProductActions from '../productsStore/product.action';
 import * as FoodieProductActions from '../../../appStore/action';
-import { CustomInputElement } from 'src/app/lit-element/input-element';
-import { CustomTextareaElement } from 'src/app/lit-element/textarea-element';
 
-console.assert(CustomInputElement !== undefined);
-console.assert(CustomTextareaElement !== undefined);
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -44,9 +40,9 @@ export class AddProductComponent implements OnInit {
   }
 
   setFocus(): void {
-    const test = document.getElementById('addProduct');
-    if (test) {
-      test.focus();
+    const setFocus = document.getElementById('addProduct');
+    if (setFocus) {
+      setFocus.focus();
     }
   }
 

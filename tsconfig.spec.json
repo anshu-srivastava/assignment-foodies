@@ -18,5 +18,12 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "coveragePathIgnorePatterns": [
+    "node_modules",
+    "test-config",
+    "interfaces",
+    ".module.ts",
+    "./src/app/main.ts",
+  ],
 }

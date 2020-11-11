@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderComponent } from './header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
 import { ThemeService } from 'src/app/services/theme/theme.service';
-import { AppMocks } from 'src/app/mocks/appMocks';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
+import { AppMocks } from 'src/app/appMocks/appMocks';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -14,9 +15,10 @@ describe('HeaderComponent', () => {
 
   beforeEach((() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, TranslateModule.forRoot()],
       declarations: [HeaderComponent],
       providers: [
+        TranslateService,
         AuthService,
         {
           provide: ThemeService,
@@ -24,8 +26,8 @@ describe('HeaderComponent', () => {
         },
         {
           provide: Store,
-          useValue: AppMocks.getMockStoreService()
-        }
+          useValue: AppMocks.getMockStoreService(),
+        },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });

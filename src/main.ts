@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import './app/lit-element/button-element';
+import './app/components/lit-elements';
 
 if (environment.production) {
   enableProdMode();

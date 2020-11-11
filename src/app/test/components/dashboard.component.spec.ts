@@ -2,9 +2,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AppMocks } from 'src/app/appMocks/appMocks';
-
-import { DashboardComponent } from './dashboard.component';
+import { DashboardComponent } from 'src/app/components/dashboard/dashboard.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -13,9 +13,12 @@ describe('DashboardComponent', () => {
   beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [DashboardComponent],
-      imports: [ReactiveFormsModule],
-      providers: [{ provide: Store, useValue: AppMocks.getMockStoreService() }],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      imports: [ReactiveFormsModule, TranslateModule.forRoot()],
+      providers: [
+        TranslateService,
+        { provide: Store, useValue: AppMocks.getMockStoreService() }
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
 
     fixture = TestBed.createComponent(DashboardComponent);

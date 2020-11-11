@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { dark } from 'src/app/theme/theme';
-import { ThemeService } from './theme.service';
+import { ThemeService } from '../services/theme/theme.service';
 
 
 describe('ThemeService', () => {

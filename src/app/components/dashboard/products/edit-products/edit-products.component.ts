@@ -5,11 +5,7 @@ import * as ProductActions from '../productsStore/product.action';
 import * as fromProduct from '../productsStore/products.reducer';
 import { Observable } from 'rxjs';
 import * as editProductActions from '../../../appStore/action';
-import { CustomInputElement } from 'src/app/lit-element/input-element';
-import { CustomTextareaElement } from 'src/app/lit-element/textarea-element';
 
-console.assert(CustomInputElement !== undefined);
-console.assert(CustomTextareaElement !== undefined);
 
 @Component({
   selector: 'app-edit-product',
@@ -18,7 +14,11 @@ console.assert(CustomTextareaElement !== undefined);
 })
 export class EditProductsComponent implements OnInit {
   @Input() id;
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<any>) {
+    setTimeout(() => {
+      this.setFocus();
+    }, 500);
+  }
 
   editProductForm = new FormGroup({
     heading: new FormControl(),
@@ -53,6 +53,13 @@ export class EditProductsComponent implements OnInit {
   Cancel(): void {
     this.store.dispatch(new editProductActions.HideEditProductAction());
     window.scrollTo(0, 0);
+  }
+
+  setFocus(): void {
+    const test = document.getElementById('editProduct');
+    if (test) {
+      test.focus();
+    }
   }
 
   onHeadingClick(event): void {

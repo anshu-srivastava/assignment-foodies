@@ -23,7 +23,8 @@ export class CustomCardElement extends LitElement {
 
   // tslint:disable-next-line: typedef
   render() {
-    return html` <div class="card">
+    return html`
+    <div class="card">
       <slot></slot>
     </div>`;
   }
