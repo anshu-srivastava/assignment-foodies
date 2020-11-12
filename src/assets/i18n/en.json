@@ -2,8 +2,8 @@
     "header": {
         "heading": "Welcome Foodies",
         "add-product-button": "Add Product",
-        "change-theme-button": "Change theme",
-        "change-language": "Change language"
+        "change-theme-button": "Change Theme",
+        "change-language": "Change Language"
     },
     "auth": {
         "login-tab": "Login",
@@ -21,16 +21,20 @@
         "user-name-validation": "User Name is required"
     },
     "card": {
-      "update-button": "Update",
+      "edit-button": "Edit",
       "delete-button": "Delete"
     },
     "product-operations": {
-      "heading-text": "Enter heading",
-      "add-product-text": "Add Product",
-      "edit-product-text": "Edit Product",
-      "description-text": "Enter description",
+      "heading-text": "Enter Heading",
+      "description-text": "Enter Description",
       "imageUrl-text": "Enter image URL",
-      "update-button": "Update Product",
+      "edit-heading": "Edit Heading",
+      "edit-description": "Edit Description",
+      "edit-imageUrl": "Edit image URL",
+      "edit-product-text": "Edit Product",
+      "add-product-text": "Add Product",
+      "add-button":"Add",
+      "save-button": "Save",
       "cancel-button": "Cancel"
     }
 }

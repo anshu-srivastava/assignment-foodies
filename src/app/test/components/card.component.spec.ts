@@ -1,8 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
-import { AppMocks } from 'src/app/mocks/appMocks';
-import { CardComponent } from './card.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AppMocks } from 'src/app/appMocks/appMocks';
+import { CardComponent } from 'src/app/components/dashboard/products/card/card.component';
 
 describe('CardComponent', () => {
   let component: CardComponent;
@@ -11,7 +12,13 @@ describe('CardComponent', () => {
   beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [CardComponent],
-      providers: [{ provide: Store, useValue: AppMocks.getMockStoreService() }],
+      imports: [
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        TranslateService,
+        { provide: Store, useValue: AppMocks.getMockStoreService() }
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
 

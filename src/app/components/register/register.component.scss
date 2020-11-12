@@ -9,9 +9,9 @@
     border-radius: 4px;
     margin: 1em auto;
     padding: 1em 1.5em;
-    font-size: 1.40rem;
+    font-size: 2rem;
     position: relative;
-    background: #4f7588;
+    border: 4px solid #4f7588;
 
     .top-space{
       margin: 15px 0px;
@@ -27,7 +27,7 @@
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
-      color: #fff;
+      color: #4f7588;
       .container {
         background: #ebebeb;
         padding: 12px;
@@ -58,7 +58,7 @@
       }
     }
 
-    input {
+    foodie-input[type="submit"] {
       box-sizing: border-box;
       display: block;
       width: 100%;
@@ -68,32 +68,17 @@
       outline: 0;
       font-family: inherit;
       font-size: 0.95em;
-    }
-
-    input[type="firstName"],
-    input[type="lastName"],
-    input[type="email"],
-    input[type="password"] {
-      background: #fff;
-      border-color: #bbb;
-      color: #555;
-      &:focus{
-        border-color: #888;
-      }
-    }
-
-    input[type="submit"] {
       background: rgb(1, 29, 51);
       border-color: transparent;
       color: #fff;
       cursor: pointer;
     }
 
-    input[type="submit"]:hover {
+    foodie-input[type="submit"]:hover {
       background: #3d6486;
     }
 
-    input[type="submit"]:focus {
+    foodie-input[type="submit"]:focus {
       border-color: #05a;
     }
 
@@ -103,10 +88,10 @@
       margin: 0px;
     }
 
-    .has-error input[type="firstName"],
-    .has-error input[type="lastName"],
-    .has-error input[type="email"]
-    .has-error input[type="password"] {
+    .has-error foodie-input[type="firstName"],
+    .has-error foodie-input[type="lastName"],
+    .has-error foodie-input[type="email"]
+    .has-error foodie-input[type="password"] {
         border:2px solid rgb(216, 12, 12);
         color: rgb(230, 14, 14);
     }

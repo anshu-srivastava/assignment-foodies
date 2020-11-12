@@ -1,22 +1,22 @@
-<div class="modal-wrapper">
+<div class="modal-wrapper" role="dialog">
   <div class="modal-body">
     <header class="heading">
-        <h1>{{'product-operations.edit-product-text' | translate}}</h1>
+        <h1 id="editProduct" tabindex="0">{{'product-operations.edit-product-text' | translate}}</h1>
     </header>
     <form [formGroup]="editProductForm">
       <div class="input-wrapper">
-          <input type="text" placeholder="{{'product-operations.heading-text' | translate}}" formControlName="heading" aria-label="Edit heading">
+          <foodie-input type="text" label="{{'product-operations.edit-heading' | translate}}" inputValue="{{editProductForm.value.heading}}"  (val-change)="onHeadingClick($event.detail.value)" [outline]="true" aria-label="Edit Heading"></foodie-input>
       </div>
       <div class="input-wrapper">
-          <input type="text" placeholder="{{'product-operations.description-text' | translate}}" formControlName="description" aria-label="Edit description">
+        <foodie-textarea  rows="6" cols="50" label="{{'product-operations.edit-description' | translate}}" inputValue="{{editProductForm.value.description}}" (val-change)="onDescriptionClick($event.detail.value)" [outline]="true" aria-label="Edit description"></foodie-textarea>
       </div>
       <div class="input-wrapper">
-          <input type="text" placeholder="{{'product-operations.imageUrl-text' | translate}}" formControlName="imageUrl" aria-label="Edit imageUrl">
+        <foodie-input type="text" label="{{'product-operations.edit-imageUrl' | translate}}" inputValue="{{editProductForm.value.imageUrl}}" (val-change)="onImgClick($event.detail.value)" [outline]="true" aria-label="Edit ImageUrl"></foodie-input>
       </div>
     </form>
     <div class="btn-wrapper">
-      <foodie-button  title = "{{'product-operations.update-button' | translate}}" (click)= "editProduct()" aria-label="Update Product"></foodie-button >
-      <foodie-button  title = "Cancel" (click)= "Cancel()" aria-label="Cancel"></foodie-button>
+      <foodie-button  title = "{{'product-operations.save-button' | translate}}" (click)= "editProduct()" aria-label="Edit Product"></foodie-button >
+      <foodie-button  title = "{{'product-operations.cancel-button' | translate}}" (click)= "Cancel()" aria-label="Cancel"></foodie-button>
     </div>
   </div>
 </div>

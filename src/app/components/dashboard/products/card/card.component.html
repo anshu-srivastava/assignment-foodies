@@ -1,15 +1,15 @@
 <div class="card" aria-label="View product details">
-  <div  class="class-wrapper" tabindex="0">
-    <img src="{{product.imageUrl}}" alt="card image" />
-    <div class="info">
-      <h1>{{ product.heading }}</h1>
-      <p>
-        {{ product.description }}
-      </p>
-    </div>
-    <div class="btn-wrapper">
-      <foodie-button  title="{{'card.update-button' | translate}}" (click)="edit(product.id)" aria-label="Edit"></foodie-button >
-      <foodie-button  title="{{'card.delete-button' | translate}}" (click)="deleteProduct(product.id)" aria-label="Delete"></foodie-button>
-    </div>
-  </div>
+    <foodie-card class="class-wrapper" tabindex="0">
+      <foodie-img [src]="product.imageUrl" alt="card image"></foodie-img>
+      <div class="info">
+        <foodie-card-header>{{ product.heading }}</foodie-card-header>
+        <p>
+          {{ product.description }}
+        </p>
+      </div>
+      <foodie-card-footer class="btn-wrapper">
+        <foodie-button  title="{{'card.edit-button' | translate}}" (click)="edit(product.id)" aria-label="Edit"></foodie-button >
+        <foodie-button  title="{{'card.delete-button' | translate}}" (click)="deleteProduct(product.id)" aria-label="Delete"></foodie-button>
+      </foodie-card-footer>
+  </foodie-card>
 </div>

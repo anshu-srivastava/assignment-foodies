@@ -61,7 +61,7 @@ export const updateProduct = () => ({
       productOperation: 'Update',
       disableFormFields: false,
     },
-    buttonText: 'update-button',
+    buttonText: 'edit-button',
     cancel: StorybookMocks.AppMocks.mockProductActions().cancel,
   },
 });

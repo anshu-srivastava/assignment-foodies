@@ -4,6 +4,7 @@ import { Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as ProductActions from '../productsStore/product.action';
 import * as FoodieProductActions from '../../../appStore/action';
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -23,7 +24,6 @@ export class AddProductComponent implements OnInit {
     heading: new FormControl(),
     description: new FormControl(),
     imageUrl: new FormControl(),
-    // id: new FormControl(),
   });
 
   ngOnInit(): void {}
@@ -40,9 +40,21 @@ export class AddProductComponent implements OnInit {
   }
 
   setFocus(): void {
-    const test = document.getElementById('addProduct');
-    if (test) {
-      test.focus();
+    const setFocus = document.getElementById('addProduct');
+    if (setFocus) {
+      setFocus.focus();
     }
+  }
+
+  onHeadingClick(event): void {
+    this.addProductForm.controls.heading.setValue(event);
+  }
+
+  onDescriptionClick(event): void {
+    this.addProductForm.controls.description.setValue(event);
+  }
+
+  onImgClick(event): void {
+    this.addProductForm.controls.imageUrl.setValue(event);
   }
 }

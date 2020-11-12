@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
   // tslint:disable-next-line: typedef
   onSubmit() {
     this.isSubmitted = true;
-    if (this.authForm.invalid){
+    if (this.authForm.invalid) {
       return;
     }
     this.authService.signIn(this.authForm.value);
@@ -47,5 +46,13 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', data.access_token);
         this.router.navigateByUrl('/dashboard');
       }); */
+  }
+
+  onEmailClick(event): void {
+    this.authForm.controls.email.setValue(event);
+  }
+
+  onPasswordClick(event): void {
+    this.authForm.controls.password.setValue(event);
   }
 }

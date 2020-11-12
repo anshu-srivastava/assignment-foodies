@@ -1,33 +1,32 @@
 
 .card {
-  width: 100%;
+  padding: 0rem 1rem;
   background-color: var(--white);
 
   .class-wrapper{
-    border:1px solid #808080a3;
+    // border:1px solid #808080a3;
     border-radius: 5px;
     margin: 0px 10px;
     img {
       width: 100%;
-      height: 200px;
+      height: 260px;
       object-fit: cover;
-      border-radius: 5px 5px 0 0;
+      border-radius: 4px 4px 0 0;
     }
 
     .info{
       padding: 1em 1.5em 2em;
-      min-height: 160px;
-      max-height: 160px;
+      min-height: 150px;
+      max-height: 150px;
       color: var(--text-color);
       p{
-        margin-top: 1em;
+        margin-top: 0.25rem;
       }
     }
     .btn-wrapper{
       display: flex;
-      width: 100%;
       justify-content: flex-end;
-      padding: 0 0 2rem;
+      padding: 0 0 1rem;
       foodie-button{
         margin: 0 2rem;
       }

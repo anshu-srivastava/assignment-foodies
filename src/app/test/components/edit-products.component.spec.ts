@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 
-import { EditProductsComponent } from './edit-products.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppMocks } from 'src/app/appMocks/appMocks';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { EditProductsComponent } from 'src/app/components/dashboard/products/edit-products/edit-products.component';
 
 describe('EditProductsComponent', () => {
   let component: EditProductsComponent;
@@ -14,8 +15,15 @@ describe('EditProductsComponent', () => {
   beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [EditProductsComponent],
-      imports: [RouterTestingModule, ReactiveFormsModule],
-      providers: [{ provide: Store, useValue: AppMocks.getMockStoreService() }],
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        TranslateModule.forRoot(),
+      ],
+      providers: [
+        TranslateService,
+        { provide: Store, useValue: AppMocks.getMockStoreService() }
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
 

@@ -1,9 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { LoginComponent } from './login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppMocks } from 'src/app/mocks/appMocks';
+import { AppMocks } from 'src/app/appMocks/appMocks';
+import {
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { LoginComponent } from 'src/app/components/login/login.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -16,8 +21,11 @@ describe('LoginComponent', () => {
         HttpClientModule,
         ReactiveFormsModule,
         FormsModule,
+        TranslateModule.forRoot(),
       ],
       declarations: [LoginComponent],
+      providers: [TranslateService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;

@@ -40,4 +40,20 @@ export class RegisterComponent implements OnInit {
       this.router.navigateByUrl('/dashboard');
     }
   }
+
+  onEmailClick(event): void {
+    this.authForm.controls.email.setValue(event);
+  }
+
+  onPasswordClick(event): void {
+    this.authForm.controls.password.setValue(event);
+  }
+
+  onFirstNameClick(event): void {
+    this.authForm.controls.firstName.setValue(event);
+  }
+
+  onLastNameClick(event): void {
+    this.authForm.controls.lastName.setValue(event);
+  }
 }

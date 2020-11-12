@@ -8,7 +8,7 @@ export class CustomBtnElement extends LitElement {
   // tslint:disable-next-line: typedef
   static get styles() {
     return css`
-      .lit-btn {
+      .btn {
         background: var(--foreground-default);
         color: var(--primary-light);
         border: 2px solid #808080a3;
@@ -18,11 +18,14 @@ export class CustomBtnElement extends LitElement {
         cursor: pointer;
         box-shadow: var(--background-tertiary-shadow);
       }
+      .btn:hover {
+        border: 2px solid blue;
+      }
     `;
   }
 
   // tslint:disable-next-line: typedef
   render() {
-    return html` <button class="lit-btn">${this.title}</button> `;
+    return html` <button class="btn">${this.title}</button> `;
   }
 }
